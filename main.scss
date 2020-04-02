@@ -21,7 +21,7 @@ header
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000000000000000000000000000000000000000000000000000000000000;
+    z-index: 10000;
     background: #f6f5ef;
     width: 100%;
     height: 123px;
@@ -294,23 +294,41 @@ header
             display: block;
             font-weight: bold;
             font-size: 1.1em;
-            padding: 0px 40px 0 0;
-            button
-            {
-                position: absolute;
-                top: -5px;
-                right: -20%;
-                border: none;
-                cursor: pointer;
-                width: 36px;
-                height: 36px;
-                background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
-                background-size: cover;
-            }
-            button.active
-            {
-                transform: rotate(180deg);
-            }
+            padding: 20 100px;
+            z-index: 10;
+            // button
+            // {
+            //     z-index: 10;
+            //     position: absolute;
+            //     top: 35%;
+            //     right: -20%;
+            //     border: none;
+            //     cursor: pointer;
+            //     width: 36px;
+            //     height: 36px;
+
+            //     background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
+            //     background-size: cover;
+            // }
+            // button.active
+            // {
+            //     transform: rotate(180deg);
+            // }
+        }
+        a::after
+        {
+            content: "";
+            position: absolute;
+            top: -5px;
+            right: -100px;
+            width: 36px;
+            height: 36px;
+            background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
+            background-size: cover;
+        }
+        a.active::after
+        {
+            transform: rotate(180deg);
         }
     }//화이트노티스 끝
 }//노티스 끝
@@ -332,14 +350,60 @@ aside
 }
 .promotion-banner
 {
+    background: #f6f5ef;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 0;
-    background: tomato;
     transition: .5s;
+    .imgBx
+    {
+        position: relative;
+        opacity: 0;
+        transition: .5s;
+        transition-delay: -0.25s;
+        img
+        {
+            margin: 30px 100px;
+            display: inline-block;
+            width: 819px;
+            height: 553px;
+        }
+        .detail-btn
+        {
+            cursor: pointer;
+            padding: 3px 5px;
+            background: none;
+            position: absolute;
+            bottom: 10%;
+            right: 35%;
+            width: 120px;
+            height: 35px;
+            text-align: center;
+            border: 2px solid #000;
+            border-radius: 3px;
+            font-weight: 900;
+            color: #161616;
+            transition: .5s;
+        }
+        .detail-btn:hover
+        {
+            background: #161616;
+            color: white;
+            text-decoration: underline;
+        }
+    }
 }
+
 .promotion-banner.active
 {
     height: 70vh;
+    .imgBx
+    {
+        transition-delay: 0.2s;
+        opacity: 1;
+    }
 }
 .reward
 {
