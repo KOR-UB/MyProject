@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Poppins.css">
+    <link rel="stylesheet" href="../css/01.css">
+    <script src="../js/selectMenu.js" defer></script>
+</head>
+<body>
+    <select id="portfolioMenu">
+        <option selected id="#">포트폴리오 목록</option>
+        <option id="01">제작 중</option>
+        <option id="lineclone">라인 클론</option>
+        <option id="tadaclone">타다 클론</option>
+    </select>
+    <header>
+        <h1 class="logo">LOGO</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="sec1">
+        <div class="banner">
+            <div id="curtain">
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="toggle" onclick="toggle()"></div>
+            </div>
+            <!-- <div class="sec1-imgBx" id="bannerBx">
+                <h2>팀 소개</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis officia inventore ipsa, quas amet aspernatur incidunt quam rem ipsam facere deserunt, alias animi atque itaque, minus ipsum nesciunt magnam! Ea.</p>
+            </div> -->
+            <div class="text">
+                <h2>Every Your Team</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente quibusdam pariatur voluptatem enim quam veritatis similique, earum illum officia! Doloremque aspernatur laboriosam omnis eligendi praesentium ut eaque in blanditiis expedita!</p>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <div id="effectBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="imgBx">
+                <a href="#" style="--i:1;">L</a>
+                <a href="#" style="--i:2;">O</a> 
+                <a href="#" style="--i:3;">G</a>  
+                <a href="#" style="--i:4;">O</a> 
+
+            </div>
+        </div>
+    </section>
+    <section class="sec3">
+        <div class="imgBx">
+            <div class="card">
+                <div class="face face1">
+                    <div class="face-content">
+                        <img src="..\img\sketch.png">
+                        <h3>Disign</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="face-content">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam illo mollitia, deserunt, dolore optio, magnam corrupti non odit est soluta amet ut exercitationem.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="face-content">
+                        <img src="..\img\data.png">
+                        <h3>Code</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="face-content">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam illo mollitia, deserunt, dolore optio, magnam corrupti non odit est soluta amet ut exercitationem.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="face-content">
+                        <img src="..\img\startup.png">
+                        <h3>Launch</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="face-content">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam illo mollitia, deserunt, dolore optio, magnam corrupti non odit est soluta amet ut exercitationem.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="details">
+                <h2>Service</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima hic itaque provident voluptatibus beatae, vero maxime aperiam blanditiis nihil vitae deleniti optio dicta in, dignissimos unde. Voluptatibus nihil omnis eligendi?
+                Enim ex vel sequi aut quae molestiae esse distinctio atque similique veniam non incidunt, odit dolor vitae animi adipisci quaerat itaque voluptatem error, voluptatum numquam porro aliquid ipsum possimus. Alias?
+                Repellendus facere ut sit harum accusamus esse quisquam excepturi incidunt quia sunt reiciendis beatae iste voluptatum tempora nam perspiciatis, nulla modi fugit. Veritatis, corrupti maxime possimus provident non qui dolor.</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        // var sec1imgBx = document.getElementById("bannerBx");
+        // window.addEventListener("scroll" ,function()
+        // {
+        //     var value = window.scrollY;
+        //     sec1imgBx.style.top = value * 1.5 + "px";
+        // })
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function()
+        {
+            var header = document.querySelector("header");
+            var text = document.querySelector(".text");
+            var sec2 = document.querySelector(".sec2");
+            var sec3 = document.querySelector(".sec3");
+            header.classList.toggle("sticky", window.scrollY > 0);
+            text.classList.toggle("active", window.scrollY > 0);
+            sec2.classList.toggle("active", window.scrollY > 800);
+            sec3.classList.toggle("active", window.scrollY > 1800);
+        })
+        function toggle()
+        {
+            var curtain = document.getElementById("curtain");
+            curtain.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
