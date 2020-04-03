@@ -3,113 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/project.css">
     <title>project</title>
     <style>
-        *
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body
-        {
-            height: 100vh;
-        }
-        header
-        {
-            position: fixed;
-            position: relative;
-            border-bottom: 1px solid black;
-            width: 100%;
-            height: 8vh;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        header .logo
-        {
-            letter-spacing: 3px;
-            font-size: 3em;
-            font-weight: bold;
-        }
-        .toggle {
-            display: inline-block;
-            align-self: flex-end;
-            position: relative;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            margin: 15px;
-            z-index: 0;
-        }
-        .toggle:before {
-            content: "";
-            position: absolute;
-            top: 4px;
-            width: 100%;
-            height: 4px;
-            background: black;
-            z-index: 1;
-            box-shadow: 0 10px 0 #000;
-            transition: 0.5s;
-        }
-        .toggle:after {
-            content: "";
-            position: absolute;
-            bottom: 2px;
-            width: 100%;
-            height: 4px;
-            background: black;
-            z-index: 1;
-            transition: 0.5s;
-        }
-        header.active .toggle::before
-        {
-            box-shadow: none;
-            transform: translateY(10px) rotate(450deg);
-        }
-        header.active .toggle::after
-        {
-            transform: translateY(-10px) rotate(-450deg);  
-        }
-        .overlay
-        {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            right: -100%;
-            background: rgba(20, 20, 99, 0.411);
-            transition: 0.5s ease-in-out;
-        }
-        .overlay .toggle
-        {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        header.active .overlay
-        {
-            transform: translateX(-100%);
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            패스트 캠퍼스
+            <a href="#">
+                <span style="--i:1;">패</span>
+                <span style="--i:2;">스</span>
+                <span style="--i:3;">트</span> 
+                <span style="--i:4;">캠</span>
+                <span style="--i:5;">퍼</span>
+                <span style="--i:6;">스</span>
+            </a>
         </div>
-        <div class="toggle" onclick="toggle()"></div>
+        <button class="toggle" onclick="toggle()" type="button" tabindex="0"></button>
         <div class="overlay">
-            <div class="toggle" onclick="toggle()"></div>
+            <ul>
+                <li tabindex="0"><a>메뉴</a></li>
+                <li tabindex="0"><a>이디야멤버스</a></li>
+                <li tabindex="0"><a>이디야커피랩</a></li>
+                <li tabindex="0"><a>이디야컬쳐랩</a></li>
+                <li tabindex="0"><a>공지사항</a></li>
+                <li tabindex="0"><a>매장 찾기</a></li>
+            </ul>
+            <button class="toggle" onclick="toggle()" tabindex="0" type="button"></button>
         </div>
     </header>
     <main>
         <section>
-            
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="Ice 체리 블라썸">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="Hot 체리 블라썸">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="Ice 초코 브라우니">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="Hot 초코 브라우니">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="제주청귤 오리지널">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="제주청귤 블라썸">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="석류 오리지널">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="석류 애플라임">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+
+                    </div>
+                    <div class="downbg">
+
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <script>
