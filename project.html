@@ -12,12 +12,20 @@
     <header>
         <div class="logo">
             <a href="#">
-                <span style="--i:1;">패</span>
-                <span style="--i:2;">스</span>
-                <span style="--i:3;">트</span> 
-                <span style="--i:4;">캠</span>
-                <span style="--i:5;">퍼</span>
-                <span style="--i:6;">스</span>
+                <span style="--i:1;">E</span>
+                <span style="--i:2;">D</span>
+                <span style="--i:3;">I</span> 
+                <span style="--i:4;">Y</span>
+                <span style="--i:5;">A</span>
+                <span></span>
+                <span style="--i:6;">♥</span>
+                <span></span>
+                <span style="--i:7;">C</span>
+                <span style="--i:8;">O</span>
+                <span style="--i:9;">F</span>
+                <span style="--i:10;">F</span>
+                <span style="--i:11;">E</span>
+                <span style="--i:12;">E</span>
             </a>
         </div>
         <button class="toggle" onclick="toggle()" type="button" tabindex="0"></button>
@@ -35,20 +43,24 @@
     </header>
     <main>
         <section>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="Ice 체리 블라썸">
                 </div>
                 <div class="details">
                     <div class="topbg">
-
+                        <h2>ICED 벚꽃라떼</h2>
+                        <small>Cherry Blossom Latte</small>
+                        <hr>
+                        <p>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</p>
+                        <button class="toggle"></button>
                     </div>
                     <div class="downbg">
 
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="Hot 체리 블라썸">
                 </div>
@@ -61,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="Ice 초코 브라우니">
                 </div>
@@ -74,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="Hot 초코 브라우니">
                 </div>
@@ -87,20 +99,20 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="제주청귤 오리지널">
                 </div>
                 <div class="details">
                     <div class="topbg">
-
+    
                     </div>
                     <div class="downbg">
 
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="제주청귤 블라썸">
                 </div>
@@ -113,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="석류 오리지널">
                 </div>
@@ -126,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="./img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="석류 애플라임">
                 </div>
@@ -142,9 +154,14 @@
         </section>
     </main>
     <script>
-        function toggle()
+        function clickEventHandler(e)
         {
-            var header = document.querySelector("header");
+            console.log(e);
+            e.target.classList.toggle("active");
+        }
+        function toggle() //버거바 토글 영영
+        {
+            const header = document.querySelector("header");
             header.classList.toggle("active");
         }
     </script>
