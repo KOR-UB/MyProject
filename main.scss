@@ -7,9 +7,14 @@ a
     text-decoration: none;
     color: black;
 }
+:root
+{
+    --themeOrange: #eea60a;
+}
 body
 {
-    min-height: 100vh;;
+    min-height: 100vh;
+    // background: var(--themeOrange);
 }
 .header-clearfix
 {
@@ -118,12 +123,94 @@ header
         font-size: 1em;
         li
         {
-            a
+            .item
             {
                 line-height: 90px;
                 padding: 0 27px;
                 padding-bottom: 42px;
-            } //a 끝
+            } //메뉴 아이템 끝
+            .nav-container
+            {
+                position: fixed;
+                top: 123px;
+                left: 0;
+                width: 100%;
+                background: #2C2A29;
+                .items
+                {
+                    margin: 0 auto;
+                    position: relative;
+                    width: 1200px;
+                    color: white;
+                    display: flex;
+                    flex-wrap: wrap;
+                    .details
+                    {
+                        list-style: none;
+                        margin: 20px;
+                        display: inline-block;
+                        width: 14%;
+                        height: 100%;
+                        color: white;
+                        li
+                        {
+                            font-size: .8em;
+                            opacity: 0.6;
+                            a
+                            {
+                                color: white;
+                            }
+                        }
+                        a:hover
+                        {
+                            text-decoration: underline;
+                        }
+                        .first
+                        {
+                            font-size: .9em;
+                            opacity: 1;
+                            margin-bottom: 7px;
+                        }
+                    }
+                }//아이템 끝
+                .nav-footer
+                {
+                    width: 100%;
+                    height: 15vh;
+                    background: url(https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg);
+                    .footer-content
+                    {
+                        .txtBx
+                        {
+                            padding: 5px 20px;
+                            font-size: 0.72em;
+                            a
+                            {
+                                color: white;
+                            }
+                            p
+                            {
+                                margin: 3px 0;
+                                color: yellowgreen;
+                            }
+                            .new-item::after
+                            {
+                                content: "NEW";
+                                color: white;
+                                position: relative;
+                                top: -3px;
+                                font-size: 0.6em;
+                                margin-left: 5px;
+                                border-radius: 35px;
+                                background: rgb(20, 153, 20);
+                                width: 120px;
+                                height: 40px;
+                                padding: 2px 4px;
+                            }
+                        }
+                    }
+                }
+            }
         } //li 끝
     } //메뉴 끝
 } //헤드 끝나는 지점
@@ -288,6 +375,7 @@ header
         justify-content: center;
         align-items: center;
         padding-right: 20%;
+        border-bottom: 1px solid rgb(235, 221, 221);
         a
         {
             position: relative;
@@ -350,6 +438,7 @@ aside
 }
 .promotion-banner
 {
+    position: relative;
     background: #f6f5ef;
     width: 100%;
     display: flex;
@@ -357,6 +446,50 @@ aside
     align-items: center;
     height: 0;
     transition: .5s;
+    .slide-ctr
+    {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: .5s;
+        transition-delay: -0.25s;
+        a
+        {
+            cursor: pointer;
+            width: 13px;
+            height: 12px;
+            font-size: 0;
+            background: url(https://www.starbucks.co.kr/common/img/main/main_prom_off.png) no-repeat;
+            background-size: cover;
+            margin: 0 10px;
+        }
+        a:nth-child(1)
+        {
+            width: 9px;
+            height: 12px;
+            background: url(https://www.starbucks.co.kr/common/img/main/main_prom_play.png) no-repeat;
+            background-size: cover;
+        }
+        .auto
+        {
+            background: url(https://www.starbucks.co.kr/common/img/main/main_prom_stop.png) no-repeat !important;
+            background-size: cover;
+        }
+        // .stop
+        // {
+        //     background: url(https://www.starbucks.co.kr/common/img/main/main_prom_play.png) no-repeat;
+        //     background-size: cover;
+        // }
+        a.active
+        {
+            background: url(https://www.starbucks.co.kr/common/img/main/main_prom_on.png);
+            background-size: cover;
+        }
+    }
     .imgBx
     {
         position: relative;
@@ -365,7 +498,7 @@ aside
         transition-delay: -0.25s;
         img
         {
-            margin: 30px 100px;
+            margin: 30px 6px;
             display: inline-block;
             width: 819px;
             height: 553px;
@@ -394,12 +527,92 @@ aside
             text-decoration: underline;
         }
     }
+    .btn-group
+    {
+        opacity: 0;
+        transition: .5s;
+        transition-delay: -0.25s;
+        .leftbtn
+        {
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            display: block;
+            width: 50px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            z-index: 11;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        .leftbtn::after
+        {
+            content: "";
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
+            background-size: cover;
+            transform: rotate(90deg);
+        }
+    }
+   
+    .rightbtn
+    {
+        cursor: pointer;
+        position: absolute;
+        top: 30%;
+        left: 73%;
+        display: block;
+        width: 50px;
+        height: 50px;
+        font-weight: bold;
+        font-size: 1.1em;
+        transform: scale(1.3);
+        z-index: 11;
+    }
+    .rightbtn::after
+    {
+        content: "";
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
+        background-size: cover;
+        transform: rotate(-90deg);
+    }
 }
-
+.promotion-banner::before
+{
+    content: "";
+    position: absolute;
+    background: #f6f5ef8d;
+    top: 0;
+    left: 0;
+    width: 28%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+.promotion-banner::after
+{
+    content: "";
+    position: absolute;
+    background: #f6f5ef8d;
+    top: 0;
+    right: 0;
+    width: 28%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
 .promotion-banner.active
 {
     height: 70vh;
-    .imgBx
+    .imgBx,
+    .btn-group,
+    .slide-ctr
     {
         transition-delay: 0.2s;
         opacity: 1;

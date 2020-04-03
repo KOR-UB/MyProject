@@ -5,6 +5,9 @@ a {
   text-decoration: none;
   color: black; }
 
+:root {
+  --themeOrange: #eea60a; }
+
 body {
   min-height: 100vh; }
 
@@ -87,10 +90,65 @@ header {
     list-style: none;
     text-transform: uppercase;
     font-size: 1em; }
-    header .menu-list li a {
+    header .menu-list li .item {
       line-height: 90px;
       padding: 0 27px;
       padding-bottom: 42px; }
+    header .menu-list li .nav-container {
+      position: fixed;
+      top: 123px;
+      left: 0;
+      width: 100%;
+      background: #2C2A29; }
+      header .menu-list li .nav-container .items {
+        margin: 0 auto;
+        position: relative;
+        width: 1200px;
+        color: white;
+        display: flex;
+        flex-wrap: wrap; }
+        header .menu-list li .nav-container .items .details {
+          list-style: none;
+          margin: 20px;
+          display: inline-block;
+          width: 14%;
+          height: 100%;
+          color: white; }
+          header .menu-list li .nav-container .items .details li {
+            font-size: .8em;
+            opacity: 0.6; }
+            header .menu-list li .nav-container .items .details li a {
+              color: white; }
+          header .menu-list li .nav-container .items .details a:hover {
+            text-decoration: underline; }
+          header .menu-list li .nav-container .items .details .first {
+            font-size: .9em;
+            opacity: 1;
+            margin-bottom: 7px; }
+      header .menu-list li .nav-container .nav-footer {
+        width: 100%;
+        height: 15vh;
+        background: url(https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg); }
+        header .menu-list li .nav-container .nav-footer .footer-content .txtBx {
+          padding: 5px 20px;
+          font-size: 0.72em; }
+          header .menu-list li .nav-container .nav-footer .footer-content .txtBx a {
+            color: white; }
+          header .menu-list li .nav-container .nav-footer .footer-content .txtBx p {
+            margin: 3px 0;
+            color: yellowgreen; }
+          header .menu-list li .nav-container .nav-footer .footer-content .txtBx .new-item::after {
+            content: "NEW";
+            color: white;
+            position: relative;
+            top: -3px;
+            font-size: 0.6em;
+            margin-left: 5px;
+            border-radius: 35px;
+            background: #149914;
+            width: 120px;
+            height: 40px;
+            padding: 2px 4px; }
 
 .sec1 {
   position: relative;
@@ -215,7 +273,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 20%; }
+    padding-right: 20%;
+    border-bottom: 1px solid #ebdddd; }
     .notice .whitenotice a {
       position: relative;
       display: block;
@@ -249,6 +308,7 @@ aside {
     height: 100%; }
 
 .promotion-banner {
+  position: relative;
   background: #f6f5ef;
   width: 100%;
   display: flex;
@@ -256,13 +316,42 @@ aside {
   align-items: center;
   height: 0;
   transition: .5s; }
+  .promotion-banner .slide-ctr {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .5s;
+    transition-delay: -0.25s; }
+    .promotion-banner .slide-ctr a {
+      cursor: pointer;
+      width: 13px;
+      height: 12px;
+      font-size: 0;
+      background: url(https://www.starbucks.co.kr/common/img/main/main_prom_off.png) no-repeat;
+      background-size: cover;
+      margin: 0 10px; }
+    .promotion-banner .slide-ctr a:nth-child(1) {
+      width: 9px;
+      height: 12px;
+      background: url(https://www.starbucks.co.kr/common/img/main/main_prom_play.png) no-repeat;
+      background-size: cover; }
+    .promotion-banner .slide-ctr .auto {
+      background: url(https://www.starbucks.co.kr/common/img/main/main_prom_stop.png) no-repeat !important;
+      background-size: cover; }
+    .promotion-banner .slide-ctr a.active {
+      background: url(https://www.starbucks.co.kr/common/img/main/main_prom_on.png);
+      background-size: cover; }
   .promotion-banner .imgBx {
     position: relative;
     opacity: 0;
     transition: .5s;
     transition-delay: -0.25s; }
     .promotion-banner .imgBx img {
-      margin: 30px 100px;
+      margin: 30px 6px;
       display: inline-block;
       width: 819px;
       height: 553px; }
@@ -285,10 +374,78 @@ aside {
       background: #161616;
       color: white;
       text-decoration: underline; }
+  .promotion-banner .btn-group {
+    opacity: 0;
+    transition: .5s;
+    transition-delay: -0.25s; }
+    .promotion-banner .btn-group .leftbtn {
+      position: absolute;
+      top: 30%;
+      left: 25%;
+      display: block;
+      width: 50px;
+      height: 50px;
+      font-weight: bold;
+      font-size: 1.1em;
+      z-index: 11;
+      transform: scale(1.3);
+      cursor: pointer; }
+    .promotion-banner .btn-group .leftbtn::after {
+      content: "";
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
+      background-size: cover;
+      transform: rotate(90deg); }
+  .promotion-banner .rightbtn {
+    cursor: pointer;
+    position: absolute;
+    top: 30%;
+    left: 73%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transform: scale(1.3);
+    z-index: 11; }
+  .promotion-banner .rightbtn::after {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: url(https://image.istarbucks.co.kr/common/img/common/btn_prom_down.png) no-repeat;
+    background-size: cover;
+    transform: rotate(-90deg); }
+
+.promotion-banner::before {
+  content: "";
+  position: absolute;
+  background: #f6f5ef8d;
+  top: 0;
+  left: 0;
+  width: 28%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10; }
+
+.promotion-banner::after {
+  content: "";
+  position: absolute;
+  background: #f6f5ef8d;
+  top: 0;
+  right: 0;
+  width: 28%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10; }
 
 .promotion-banner.active {
   height: 70vh; }
-  .promotion-banner.active .imgBx {
+  .promotion-banner.active .imgBx,
+  .promotion-banner.active .btn-group,
+  .promotion-banner.active .slide-ctr {
     transition-delay: 0.2s;
     opacity: 1; }
 
