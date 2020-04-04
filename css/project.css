@@ -6,8 +6,8 @@
         }
         html::-webkit-scrollbar
         {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
         html::-webkit-scrollbar-thumb
         {
@@ -15,23 +15,15 @@
             background: linear-gradient(75deg, rgb(54, 50, 50), rgb(31, 141, 59));
             box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px 2px rgba(0,0,0,.25);
         }
-        #scrollPath
+        .a11yhidden
         {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 10px;
-            height: 100%;
-            background: rgba(255,255,255,.05);
-        }
-        #progressbar
-        {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 5px;
-            background: linear-gradient(to top, #008aff,#00ffe7);
-            animation:  animate 30s linear infinite;
+            overflow: hidden;
+            position: absolute !important;
+            top: -10000em;
+            clip: rect(0, 0, 0, 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
         }
         @keyframes animate
         {
@@ -45,28 +37,6 @@
                 
             }
         }
-        #progressbar:before
-        {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, #008aff, #00ffe7);
-            filter: blur(10px);
-        }
-        #progressbar:after
-        {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, #008aff, #00ffe7);
-            filter: blur(30px);
-        }
         body
         {
             height: 100vh;
@@ -74,7 +44,8 @@
         header
         {
             position: fixed;
-            position: relative; 
+            top: 0;
+            left: 0;
             width: 100%;
             height: 80px;
             z-index: 10000;
@@ -103,8 +74,26 @@
             height: 30px;
             cursor: pointer;
             z-index: 0;
+            font-size: 0px;
             margin: 15px;
             padding-right: 30px;
+        }
+        .trickhover
+        {
+            position: absolute;
+            background: none;
+            border: none;
+            width: 70px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+        }
+        .trickhover:hover,
+        .trickhover:focus
+        {
+            background: rgb(241, 241, 241);
         }
         .toggle:before {
             content: "";
@@ -127,12 +116,14 @@
             z-index: 1;
             transition: 0.5s;
         }
-        header.active .toggle::before
+        header.active .toggle::before,
+        .card .details .topbg .close-btn::before
         {
             box-shadow: none;
             transform: translateY(10px) rotate(45deg);
         }
-        header.active .toggle::after
+        header.active .toggle::after,
+        .card .details .topbg .close-btn::after
         {
             transform: translateY(-10px) rotate(-45deg);  
         }
@@ -142,9 +133,18 @@
             width: 100%;
             height: 100%;
             top: 0;
-            right: -100%;
+            right: 0;
             background: rgba(20, 24, 44, 0.95);
-            transition: 0.5s ease-in-out;
+            transform: translateX(100%);
+            transition: 0.3s ease-in-out;
+        }
+        .overlay nav
+        {
+            display: none;
+        }
+        header.active .overlay nav
+        {
+            display: block;
         }
         .overlay ul
         {
@@ -156,33 +156,34 @@
         {
             width: 100%;
             transition: 0.5s;
-            padding: 20px;
             position: relative;
             cursor: pointer;
         }
-        .overlay ul li:focus
+        .overlay ul li .item:focus
         {
-            background: rgb(28, 28, 184);
+            background: #2e437c;
         }
-        .overlay ul li::after
+        .overlay ul li .item::after
         {
             content: "";
             margin: 20px 0;
             position: absolute;
             left: 0;
             width: 100%;
-            height: .5px;
+            height: 2px;
             background: rgb(15, 50, 88);
             display: block;
         }
-        .overlay ul li:hover
+        .overlay ul li .item:hover
         {
-            background: rgb(28, 28, 184);
+            background: #2e437c;
         }
-        .overlay ul li a
+        .overlay ul li .item
         {
+            display: block;
             color: white;
             font-size: 1.4em;
+            padding: 1em;
             text-decoration: none;
         }
         .overlay .toggle
@@ -214,7 +215,8 @@
         }
         header.active .overlay
         {
-            transform: translateX(-100%);
+            display: block;
+            transform: translateX(0);
         }
         .logo span
         {
@@ -242,13 +244,15 @@
         }
         main
         {
+            /* 픽시드로 뜨는걸 해결하기 위해 마진 탑을 헤더 높이 만큼 주었다 */
+            margin-top: 80px; 
             width: 100%;
             height: 100vh;
         }
         section
         {
             padding:15px 0;
-            max-width: 660px;
+            max-width: 740px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -260,7 +264,7 @@
             width: 247.44px;
             height: 377.03px;
             margin: 15px;
-            transition: 0.5s;
+            transition: 0.2s ease-in-out;
             background: #F5F5F5;
             display: flex;
             justify-content: center;
@@ -272,33 +276,37 @@
         {
             width: 247.44px;
             height: 317.03px;
-            transition: 0.4s ease-in-out;
-            transform: scale(.9);
             pointer-events: none;
             display: flex;
             justify-content: center;
             align-items: flex-start;
         }
-        section .card:hover .imgBx
+        section .card .imgBx img
+        {
+            transform: scale(.9);
+            transition: 0.4s ease-in-out;
+        }
+        section .card:hover .imgBx img
         {
             transform: scale(1);
         }
         section .card .details
         {
             display: none;
-            width: 100%;
-            height: 100%;
+            width: 340px;
+            height: 373px;
             position: absolute;
             left: 0;
             top: 0;
         }
         section .card .details .topbg
         {
-            padding: 30px 20px 0 20px;
+            padding: 30px 22px 0 22px;
             width: 100%;
-            height: 75%;
+            height: 303px;
             position: absolute;
             background: rgba(255, 255, 255, 0.6);
+            letter-spacing: -0.02em;
         }
         section .card .details .topbg hr
         {
@@ -307,29 +315,88 @@
             margin-top: 9px;
             margin-bottom: 10px;
         }
+        section .card .details .topbg .close-btn
+        {
+            pointer-events: all;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: scale(0.5);
+        }
         section .card .details .downbg
         {
             width: 100%;
-            height: 25%;
+            height: 70px;
             position: absolute;
             bottom: 0;
             background: #F8F8F8;
+            letter-spacing: -0.02em;
+            display: flex;
+
         }
-        section .card .details h2
+        section .card .details .downbg .box
         {
-            font-size: 1.1em;
+            font-size: 0.8em;
+            display: inline-block;
+            padding: 10px 0 5px 0px;
+        }
+        section .card .details .downbg .box.left
+        {
+            padding-left: 21px;
+            padding-right: 14px;
+        }
+        section .card .details .downbg .box.right
+        {
+            border-left: 1px solid #CCCCCC;
+            padding-left: 10px;
+            padding-right: 33px;
+        }
+        section .card .details .downbg p
+        {
+            display: inline-block;
+            width: 60px;
+            height: 19px;
+            font-size: 13px;
+            line-height: 19px;
+        }
+        section .card .details .downbg small
+        {
+            display: inline-block;
+            width: 60px;
+            height: 19px;
+            font-size: 13px;
+            line-height: 19px;
+        }
+        section .card .details .topbg h2
+        {
+            width: 296px;
+            height: 27px;
             line-height: 27px;
             color: #202022;
+            font-size: 18px;
         }
-        section .card .details small
+        section .card .details .topbg small
         {
             line-height: 21px;
             color: #999999;
         }
-        section .card .details p
+        section .card .details .topbg p
         {
+            width: 296px;
+            font-size: 1em;
             line-height: 140%;
             color: #202022;
+        }
+        section .card.active
+        {
+            pointer-events: none;
+            min-width: 340px;
+            height: 373px;
+        }
+        section .card.active .imgBx
+        {
+            min-width: 100%;
+
         }
         section .card.active .details
         {
@@ -361,4 +428,26 @@
                     color: #31287C;
                 }
             }
+        }
+        @media (max-height:600px)
+        {
+            .overlay nav
+            {
+                width: 100%;
+            }
+            .overlay .toggle
+            {
+                float: right;
+            }
+            .overlay nav ul
+            {
+                margin-top: 20px;
+                float: left;
+            }
+            .overlay a
+            {
+                font-size: .9em;
+                line-height: 5px;
+            }
+            
         }
