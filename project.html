@@ -376,7 +376,7 @@
             <div class="content">
                 <h2><span>EDIYA </span>COFFEE CLONE</h2>
                 <p>개발자</p>
-                <marquee width="170">강주현 류동우 윤유비</marquee>
+                <marquee width="200">강주현 류동우 윤유비</marquee>
             </div>
         </div>
     </section>
@@ -387,7 +387,8 @@
         const header = document.querySelector("header");
         const card = document.querySelectorAll(".card");
         const cardsection = document.querySelector(".cardsection")
-        
+        const imgcontainer = document.querySelector(".imgcontainer");
+
         overlay_close.addEventListener("keydown", li_firstFocus);
         function li_firstFocus(e)
         {
@@ -433,7 +434,7 @@
         }
         window.addEventListener("scroll", function()
         {
-
+            imgcontainer.classList.toggle("active", window.scrollY > 1200);
             // var text = document.querySelector(".text");
             // var sec2 = document.querySelector(".sec2");
             // var sec3 = document.querySelector(".sec3");
