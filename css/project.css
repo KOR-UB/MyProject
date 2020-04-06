@@ -470,35 +470,35 @@
         {
             display: block;
         }
-        .card:nth-child(1):hover
+        .cardsection .card:nth-child(1):hover
         {
             background: rgb(241, 140, 216);
         }
-        .card:nth-child(2):hover
+        .cardsection .card:nth-child(2):hover
         {
             background: rgb(241, 140, 162);
         }
-        .card:nth-child(3):hover
+        .cardsection .card:nth-child(3):hover
         {
             background: rgb(241, 189, 140);
         }
-        .card:nth-child(4):hover
+        .cardsection .card:nth-child(4):hover
         {
             background: rgb(148, 111, 77);
         }
-        .card:nth-child(5):hover
+        .cardsection .card:nth-child(5):hover
         {
             background: rgb(255, 252, 78);
         }
-        .card:nth-child(6):hover
+        .cardsection .card:nth-child(6):hover
         {
             background: rgb(241, 85, 132);
         }
-        .card:nth-child(7):hover
+        .cardsection .card:nth-child(7):hover
         {
             background: rgb(241, 85, 132);
         }
-        .card:nth-child(8):hover
+        .cardsection .card:nth-child(8):hover
         {
             background: rgb(241, 85, 132);
         }
@@ -608,7 +608,7 @@
             border-radius: 30px;
             width: 100%;
             height: 100%;
-            background:rgba(48, 40, 124, 0.671);
+            background:rgba(18, 82, 34, 0.425);
             clip-path: polygon(0 0, 23% 0, 45% 100%, 0% 100%);
         }
         .imgcontainer .contentbg .content
@@ -655,6 +655,137 @@
             vertical-align: bottom;
             color: white;
             font-size: 1.4em;
+        }
+        .imgcontainer .contentbg .content h3
+        {
+            margin-top: 50px;
+            font-size: 1.4em;
+            width: 29%;
+            text-align: justify;
+            color: white;
+        }
+        .plussec
+        {
+            width: 100%;
+            height: 50vh;
+            background:#31287C;
+            box-shadow: inset 0 0 500px 10px skyblue;
+            position: relative;
+        }
+        .plussec::before
+        {
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            width: 90%;
+            height: 3px;
+            background: linear-gradient(-75deg, white, transparent);
+        }
+        .plussec::after
+        {
+            content: "";
+            position: absolute;
+            bottom: 50px;
+            right: 10%;
+            width: 90%;
+            height: 3px;
+            background: linear-gradient(75deg, white, transparent);
+        }
+        .plussec .team-container
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        .plussec .team-container .team-card
+        {
+            border: 1px solid white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            color: white;
+            transition: 1.5s;
+            transition-delay: calc(0.5s * var(--i));
+            opacity: 0;
+        }
+        .plussec .team-container .team-card.load
+        {
+            opacity: 1;
+        }
+        .plussec .team-container .team-card .imgBx
+        {
+            width: 40%;
+            height: 80%;
+            clip-path: circle(50%);
+            transform: scale(0.8);
+            filter: grayscale(100%);
+            transition: 0.5s ease-in-out;
+        }
+        .plussec .team-container .team-card:hover .imgBx
+        {
+            filter: none;
+            transform: scale(1);
+        }
+        .plussec .team-container .team-card .imgBx img
+        {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .plussec .team-container .team-card .details
+        {
+            margin-left: 80px;
+            width: 30%;
+        }
+        @media (max-width: 1500px)
+        {
+            .plussec
+            {
+                display: block;
+                min-height: 100vh;
+            }
+            .plussec::before
+            {
+                top: 80px;
+            }
+            .plussec::after
+            {
+                bottom: 20px;
+            }
+            .plussec .team-container
+            {
+                display: block;
+                min-height: 100vh;
+            }
+            .plussec .team-container .team-card
+            {
+                position: relative;
+                min-height: 33vh;
+                box-shadow: none;
+                border: 2px solid white;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .plussec .team-container .team-card .imgBx
+            {
+                width: 100%;
+                clip-path: circle(39%);
+            }
+            .plussec .team-container .team-card .details
+            {
+                width: 100%;
+           
+            }
         }
         @media (max-width:1250px)
         {

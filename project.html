@@ -48,6 +48,18 @@
             transition: 0.5s;
             border-bottom: 200px solid #d9d9d9;
         }
+        .card.active::before
+        {
+            transition: none;
+            width: 100%;
+            height: 100%;
+            transform: none;
+            box-shadow: 0px 0px 5px 1px #1f2b4b;
+        }
+        .card.active::after
+        {
+            content: none;
+        }
         h6
         {
             /* position: fixed; */
@@ -73,17 +85,7 @@
                 opacity: 0;
             }
         }
-        .card.active::before
-        {
-            width: 100%;
-            height: 100%;
-            transform: skewX(0deg);
-            box-shadow: 0px 0px 5px 1px #1f2b4b;
-        }
-        .card.active::after
-        {
-            content: none;
-        }
+  
     </style>
 </head>
 <body>
@@ -377,6 +379,38 @@
                 <h2><span>EDIYA </span>COFFEE CLONE</h2>
                 <p>개발자</p>
                 <marquee width="200">강주현 류동우 윤유비</marquee>
+                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore modi vero eligendi tempora temporibus eius architecto numquam molestiae est, nisi, ratione quos aliquam sit suscipit blanditiis odit adipisci asperiores ducimus?</h3>
+            </div>
+        </div>
+    </section>
+    <section class="plussec">
+        <div class="team-container">
+            <div class="team-card" style="--i:1;">
+                <div class="imgBx">
+                    <img src="./img/brand1.jpg" alt="강주현">
+                </div>
+                <div class="details">
+                    <h2>강주현</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore eveniet quibusdam aperiam distinctio incidunt omnis. Quia animi dolor cupiditate iure! Iusto ullam, mollitia vitae alias ipsam modi vero voluptas.</p>
+                </div>
+            </div>
+            <div class="team-card" style="--i:2;">
+                <div class="imgBx">
+                    <img src="./img/brand3.jpg" alt="김동욱">
+                </div>
+                <div class="details">
+                    <h2>김동욱</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore eveniet quibusdam aperiam distinctio incidunt omnis. Quia animi dolor cupiditate iure! Iusto ullam, mollitia vitae alias ipsam modi vero voluptas.</p>
+                </div>
+            </div>
+            <div class="team-card" style="--i:3;">
+                <div class="imgBx">
+                    <img src="./img/brand3.jpg" alt="윤유비">
+                </div>
+                <div class="details">
+                    <h2>윤유비</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore eveniet quibusdam aperiam distinctio incidunt omnis. Quia animi dolor cupiditate iure! Iusto ullam, mollitia vitae alias ipsam modi vero voluptas.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -388,6 +422,8 @@
         const card = document.querySelectorAll(".card");
         const cardsection = document.querySelector(".cardsection")
         const imgcontainer = document.querySelector(".imgcontainer");
+        const plussec = document.querySelector(".plussec");
+        const teamcard = document.querySelectorAll(".team-card");
 
         overlay_close.addEventListener("keydown", li_firstFocus);
         function li_firstFocus(e)
@@ -435,18 +471,13 @@
         window.addEventListener("scroll", function()
         {
             imgcontainer.classList.toggle("active", window.scrollY > 1200);
-            // var text = document.querySelector(".text");
-            // var sec2 = document.querySelector(".sec2");
-            // var sec3 = document.querySelector(".sec3");
-            // header.classList.toggle("sticky", window.scrollY > 0);
-            // text.classList.toggle("active", window.scrollY > 0);
-            // sec2.classList.toggle("active", window.scrollY > 800);
-            // sec3.classList.toggle("active", window.scrollY > 1800);
+            Array.from(teamcard).forEach(teamcard => teamcard.classList.toggle("load"),window.scrollY > 1700);
         });
         window.onload = function()
         {
             header.classList.toggle("load");
             Array.from(card).forEach(card => card.classList.toggle("load"));
+            // Array.from(teamcard).forEach(teamcard => teamcard.classList.toggle("load"));
             // cardsection.classList.toggle("load");
             
             //질문할 거 전체를 배열에 담아 forEach로 각각 함수를 실행해서 클래스를 추가할 때랑
