@@ -83,18 +83,7 @@
             display: block;
             text-decoration: none;
         }
-        .toggle {
-            background: none;
-            border: none;
-            position: relative;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            z-index: 0;
-            font-size: 0px;
-            margin: 15px;
-            padding-right: 30px;
-        }
+        
         .trickhover
         {
             position: absolute;
@@ -111,6 +100,18 @@
         .trickhover:focus
         {
             background: rgb(241, 241, 241);
+        }
+        .toggle {
+            background: none;
+            border: none;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 0;
+            font-size: 0px;
+            margin: 15px;
+            padding-right: 30px;
         }
         .toggle:before {
             content: "";
@@ -301,7 +302,22 @@
             align-items: center;
             cursor: pointer;
             position: relative;
-            
+        }
+        .cardsection .card:nth-child(1):focus,
+        .cardsection .card:nth-child(3):focus,
+        .cardsection .card:nth-child(5):focus,
+        .cardsection .card:nth-child(6):focus,
+        .cardsection .card:nth-child(7):focus,
+        .cardsection .card:nth-child(8):focus
+        {
+            transition: none !important;
+            box-shadow: inset 0px 0px 50px 10px rgb(38, 185, 196);
+        }
+        .cardsection .card:nth-child(2):focus,
+        .cardsection .card:nth-child(4):focus
+        {
+            transition: none !important;
+            box-shadow: inset 0px 0px 50px 10px rgb(209, 51, 51);
         }
         .cardsection .card:nth-child(odd)
         {
@@ -435,7 +451,7 @@
             font-size: 13px;
             line-height: 19px;
         }
-        .cardsection .card .details .topbg h2
+        .cardsection .card .details .topbg h3
         {
             width: 296px;
             height: 27px;
@@ -671,6 +687,13 @@
             background:#31287C;
             box-shadow: inset 0 0 500px 10px skyblue;
             position: relative;
+            transform: translateY(-100%);
+            transition: 1s ease-in-out;
+        }
+        .plussec.active
+        {
+            transform: translateY(0%);
+            
         }
         .plussec::before
         {
@@ -681,6 +704,7 @@
             width: 90%;
             height: 3px;
             background: linear-gradient(-75deg, white, transparent);
+            z-index: 1000;
         }
         .plussec::after
         {
@@ -691,6 +715,7 @@
             width: 90%;
             height: 3px;
             background: linear-gradient(75deg, white, transparent);
+            z-index: 1000;
         }
         .plussec .team-container
         {
@@ -712,12 +737,14 @@
             align-items: center;
             flex-wrap: wrap;
             color: white;
-            transition: 1.5s;
+            transition: .5s;
             transition-delay: calc(0.5s * var(--i));
             opacity: 0;
         }
         .plussec .team-container .team-card.load
         {
+            transition: .2s;
+            transition-delay: calc(0.2s * var(--i));
             opacity: 1;
         }
         .plussec .team-container .team-card .imgBx
@@ -745,16 +772,96 @@
             margin-left: 80px;
             width: 30%;
         }
+        .testsec
+        {
+            width: 100%;
+            height: 100vh;
+        }
+        .testsec h2
+        {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(45deg, #ff00775e, #cc00ff5e, #ffae005e, #ffae005e, #1fae995e, rgba(0, 0, 255, 0.5));
+            margin-top: calc(10vh * var(--i));
+        }
+        .testsec h2 span
+        {
+            width: 10%;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            line-height: 100vh;
+            font-size: 6em;
+            margin-top: calc(10vh * var(--i));
+            color: transparent;
+            -webkit-text-stroke: 2px #000000;
+            -webkit-background-clip: text;
+            background-image: url(https://static.vecteezy.com/packs/media/components/home/masthead-vectors/img/lavakidneys_800x400@2x-2db5e5a0c944e2b16a11a18674570f76.jpg);
+            background-attachment: fixed;
+        }
+        .testsec2
+        {
+            padding: 20px;
+            width: 100%;
+            height: 70vh;
+        }
+        .testsec2 h2
+        {
+            float: left;
+            width: 300px;
+            height: 300px;
+            font-size: 6em;
+            color: #000;
+            background: rgba(31, 31, 129, 0.568);
+            line-height: 3em;
+            text-align: center;
+            border-radius: 50%;
+            shape-outside: circle();
+            transition: 0.5s ease-in-out;
+        }
+        .testsec2
+        {
+            overflow: hidden;
+        }
+        .testsec2 p
+        {
+            position: relative;
+            width: 100%;
+            text-align: justify;
+        }
+        .testsec2 .content
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .testsec2 .imgBx img
+        {
+            width: 100%;
+            height: 100%;
+        }
+        /* .testsec2 .imgBx img
+        {
+            margin-bottom: 40px;
+        } */
         @media (max-width: 1500px)
         {
+            .testsec2 .imgBx
+            {
+                width: 250px;
+                height: 200px;
+            }
             .plussec
             {
                 display: block;
                 min-height: 100vh;
+                padding: 20px;
             }
             .plussec::before
             {
-                top: 80px;
+                top: 20px;
             }
             .plussec::after
             {
@@ -763,28 +870,38 @@
             .plussec .team-container
             {
                 display: block;
-                min-height: 100vh;
+                min-height: 60vh;
             }
             .plussec .team-container .team-card
             {
                 position: relative;
-                min-height: 33vh;
-                box-shadow: none;
-                border: 2px solid white;
-                padding: 20px;
+                min-height: 20vh;
+                box-shadow: none;    
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                border-bottom: 1px solid white;
             }
             .plussec .team-container .team-card .imgBx
             {
                 width: 100%;
                 clip-path: circle(39%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
             }
             .plussec .team-container .team-card .details
             {
                 width: 100%;
-           
+                position: relative;
+                top: -60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin: 0;
+                text-align: center;
             }
         }
         @media (max-width:1250px)
@@ -792,6 +909,15 @@
             .imgcontainer
             {
                 display: none;
+            }
+            .testsec,
+            .testsec2
+            {
+                display: none;
+            }
+            .plussec .team-container .team-card
+            {
+                opacity: 1;
             }
         }
         @media (max-width:1000px)
@@ -805,6 +931,7 @@
                 animation-delay: calc(.2s * var(--i));
                 font-size: 0.8em;
             }
+            
             @keyframes textanimate
             {
                 0%
@@ -848,6 +975,22 @@
             header .toggle
             {
                 margin: 0;
+            }
+            .plussec .team-container
+            {
+                transform: scale(0.6);
+            }
+            .plussec .team-container .team-card
+            {
+                height: 180vh;
+            }
+            .plussec .team-container .team-card .details
+            {
+
+            }
+            .plussec .team-container .team-card .imgBx img
+            {
+                object-fit: contain;
             }
             
         }
