@@ -783,7 +783,7 @@
             display: flex;
             justify-content: center;
             background: linear-gradient(45deg, #ff00775e, #cc00ff5e, #ffae005e, #ffae005e, #1fae995e, rgba(0, 0, 255, 0.5));
-            /* margin-top: calc(10vh * var(--i)); */
+            margin-top: calc(10vh * var(--i));
         }
         .testsec h2 span
         {

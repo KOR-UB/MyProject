@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pj.css">
+    <link rel="stylesheet" href="./project.css">
     <link rel="shortcut icon" href="../img/SVG/favicon.svg">
     <title>EDIYA COFFEE CLONE PROJECT</title>
     <meta itemprop="url" content="https://colorshtml.s3.ap-northeast-2.amazonaws.com/project.html">
@@ -11,8 +11,84 @@
     <meta itemprop="title" content="이디야커피 클론 프로젝트">
     <meta itemprop="description" content="패스트 캠퍼스 팀 프로젝트(강주현 윤유비 김동욱) 이디야커피 클론 홈페이지입니다.">
     <meta itemprop="image" content="https://www.ediya.com/images/common/meta_img.jpg">
+    <style>
+        .card::before
+        {
+            content: "";
+            position: absolute;
+            top: -14.4px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: #d9d9d9;
+            transform-origin: bottom;
+            transform: skewX(-45deg);
+            transition: 0.3s step-start;
+        }
+        .card:hover::before
+        {
+            transition-timing-function: step-start;
+            transform: translate(15px, 391px) skewX(45deg);
+        }
+        .card:hover::after
+        {
+            transform: skewY(45deg);
+        }
+        .card::after
+        {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -15px;
+            width: 15px;
+            height: 47%;
+            background: #d9d9d9;
+            transform-origin: left;
+            transform: skewY(-45deg);
+            transition: 0.5s;
+            border-bottom: 200px solid #d9d9d9;
+        }
+        .card.active::before
+        {
+            transition: none;
+            width: 100%;
+            height: 100%;
+            transform: none;
+            box-shadow: 0px 0px 5px 1px #1f2b4b;
+        }
+        .card.active::after
+        {
+            content: none;
+        }
+        h6
+        {
+            /* position: fixed; */
+            position: absolute;
+            background: linear-gradient(45deg, rgb(212, 39, 160) 10%, rgb(0, 217, 255) 80%, transparent) !important;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border-radius: 50%;
+            animation: toucheffect 1s linear infinite;
+        }
+        @keyframes toucheffect
+        {
+            0%
+            {
+                width: 0px;
+                height: 0px;
+                opacity: 0.5;
+            }
+            100%
+            {
+                width: 5000px;
+                height: 5000px;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- 헤더시작 -->
     <header>
         <h1 class="logo">
             <a href="https://www.ediya.com/" target="_blank">
@@ -54,15 +130,18 @@
             </nav>
         </div>
     </header>
+    <!-- 헤더 영역 끝 -->
+    <!-- 메인 시작 -->
     <main>
-        <section>
+        <h2 class="a11yhidden">메인 영역</h2>
+        <section class="cardsection">
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
                     <img src="../img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="Ice 체리 블라썸">
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2 aria-label="아이스 체리 블라썸 라떼">ICED 벚꽃라떼</h2>
+                        <h3 aria-label="아이스 체리 블라썸 라떼">ICED 벚꽃라떼</h3>
                         <small>Cherry Blossom Latte</small>
                         <hr>
                         <p>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</p>
@@ -81,6 +160,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>ICED 벚꽃 라떼</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -88,7 +170,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>ICED 벚꽃라떼</h2>
+                        <h3>ICED 벚꽃라떼</h3>
                         <small>Cherry Blossom Latte</small>
                         <hr>
                         <p>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</p>
@@ -107,6 +189,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>HOT 벚꽃 라떼</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -114,7 +199,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>ICED 브라우니 쇼콜라</h2>
+                        <h3>ICED 브라우니 쇼콜라</h3>
                         <small>Brownie Chocolate</small>
                         <hr>
                         <p>깊고 진한 초콜릿의 맛에 부드러운 휘핑크림과 브라우니를 함께 어울러져 고급스러운 디저트 같은 초콜릿 음료</p>
@@ -133,6 +218,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>ICED 브라우니 쇼콜라</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -140,7 +228,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>ICED 브라우니 쇼콜라</h2>
+                        <h3>ICED 브라우니 쇼콜라</h3>
                         <small>Brownie Chocolate</small>
                         <hr>
                         <p>은깊고 진한 초콜릿의 맛에 부드러운 휘핑크림과 브라우니를 함께 어울러져 고급스러운 디저트 같은 초콜릿 음료</p>
@@ -159,6 +247,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>HOT 브라우니 쇼콜라</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -166,7 +257,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>제주청귤 오리지널</h2>
+                        <h3>제주청귤 오리지널</h3>
                         <small>Jeju Green Tangerine Tea</small>
                         <hr>
                         <p>청정 제주지역에서 자라난 귀한 청귤의 풍부한 과육을 맛볼 수 있는 새콤달콤한 홈메이드 스타일 과일차</p>
@@ -185,6 +276,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>제주청귤 오리지널</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -192,7 +286,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>제주청귤 블라썸</h2>
+                        <h3>제주청귤 블라썸</h3>
                         <small>Jeju Green Tangerine Blossom</small>
                         <hr>
                         <p>청귤의 새콤함이 복숭아, 포도 등의 다양한 과일향과 함께 어우러져 밸런스가 훌륭한 블렌딩티</p>
@@ -211,6 +305,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>제주청귤 블라썸</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -218,7 +315,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>석류 오리지널</h2>
+                        <h3>석류 오리지널</h3>
                         <small>Pomegranate Tea</small>
                         <hr>
                         <p>석류 특유의 산뜻한 향과 깔끔한 뒷맛이 느껴지며, 과육이 한알 한알 살아있는 붉은 빛의 매력적인 과일차</p>
@@ -237,6 +334,9 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>석류 오리지널</h3>
+                </figcaption>
             </figure>
             <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
                 <div class="imgBx">
@@ -244,7 +344,7 @@
                 </div>
                 <div class="details">
                     <div class="topbg">
-                        <h2>석류 애플라임</h2>
+                        <h3>석류 애플라임</h3>
                         <small>Pomegranate Apple Lime</small>
                         <hr>
                         <p>산뜻한 석류에 다양한 과일과 꽃, 그리고 샴페인의 향이 더해져 보다 깊고 중후한 맛이 느껴지는 블렌딩티</p>
@@ -265,18 +365,124 @@
                         </div>
                     </div>
                 </div>
+                <figcaption>
+                    <h3>석류 애플라임</h3>
+                </figcaption>
             </figure>
         </section>
     </main>
+    <!-- 메인 끝  -->
+    <section class="imgcontainer">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+        <div class="contentbg">
+            <div class="clipBx"></div>
+            <div class="content">
+                <h2><span>EDIYA </span>COFFEE CLONE</h2>
+                <p>개발자</p>
+                <marquee width="200">강주현 류동우 윤유비</marquee>
+                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore modi vero eligendi tempora temporibus eius architecto numquam molestiae est, nisi, ratione quos aliquam sit suscipit blanditiis odit adipisci asperiores ducimus?</h3>
+            </div>
+        </div>
+    </section>
+    <section class="plussec">
+        <div class="team-container">
+            <div class="team-card" style="--i:1;">
+                <div class="imgBx">
+                    <img src="../img/brand1.jpg" alt="강주현">
+                </div>
+                <div class="details">
+                    <h2>강주현</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore eveniet quibusdam aperiam distinctio incidunt omnis. Quia animi dolor cupiditate iure! Iusto ullam, mollitia vitae alias ipsam modi vero voluptas.</p>
+                </div>
+            </div>
+            <div class="team-card" style="--i:2;">
+                <div class="imgBx">
+                    <img src="../img/brand3.jpg" alt="김동욱">
+                </div>
+                <div class="details">
+                    <h2>김동욱</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore eveniet quibusdam aperiam distinctio incidunt omnis. Quia animi dolor cupiditate iure! Iusto ullam, mollitia vitae alias ipsam modi vero voluptas.</p>
+                </div>
+            </div>
+            <div class="team-card" style="--i:3;">
+                <div class="imgBx">
+                    <img src="../img/brand3.jpg" alt="윤유비">
+                </div>
+                <div class="details">
+                    <h2>윤유비</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolore eveniet quibusdam aperiam distinctio incidunt omnis. Quia animi dolor cupiditate iure! Iusto ullam, mollitia vitae alias ipsam modi vero voluptas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testsec">
+        <h2>
+            <span style="--i:0">E</span>
+            <span style="--i:1">D</span>
+            <span style="--i:2">I</span>
+            <span style="--i:3">Y</span>
+            <span style="--i:4">A</span>
+            <span style="--i:5">C</span>
+            <span style="--i:6">A</span>
+            <span style="--i:7">F</span>
+            <span style="--i:8">F</span>
+            <span style="--i:9">E</span>
+        </h2>
+    </section>
+    <section class="testsec2">
+        <div class="container">
+            <div class="content">
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1510911706733.png" alt="허니 카라멜 브레드">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1510911830771.png" alt="생크림 초코쿠키 빵">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1510912318685.png" alt="핫 치킨 브리또">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1527144123168.png" alt="수플레 치즈 케이크">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1548049712448.png" alt="생크림 와플">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1565080697667.png" alt="떠먹는 롤케익 (초코)">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1566779269364.png" alt="크루아상">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1572224047505.png" alt="에그 베이컨 과카몰리 샌드위치">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1510910024686.png" alt="크로크 무슈">
+                </div>
+                <div class="imgBx">
+                    <img src="https://www.ediya.com/files/menu/IMG_1578270933120.png" alt="바닐라 마카롱">
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script>
         const nav_menulist = document.querySelector(".nav-menulist");
         const overlay_close = document.getElementById("overlay-close");
         const li_first = document.getElementById("fistitem");
-        
+        const header = document.querySelector("header");
+        const card = document.querySelectorAll(".card");
+        const cardsection = document.querySelector(".cardsection")
+        const imgcontainer = document.querySelector(".imgcontainer");
+        const plussec = document.querySelector(".plussec");
+        const teamcard = document.querySelectorAll(".team-card");
+
         overlay_close.addEventListener("keydown", li_firstFocus);
         function li_firstFocus(e)
         {
-
             if(e.keyCode === 9)
             {
                 li_first.focus()
@@ -302,8 +508,6 @@
                 console.log("not active");
             }
         }
-
-
         function clickEventHandler(e)
         {   
             e.target.classList.toggle("active");
@@ -318,6 +522,42 @@
             const header = document.querySelector("header");
             header.classList.toggle("active");
         }
+        window.addEventListener("scroll", function()
+        {
+            imgcontainer.classList.toggle("active", window.scrollY > 1200);
+            plussec.classList.toggle("active",window.scrollY > 1500);
+            Array.from(teamcard).forEach(teamcard => teamcard.classList.toggle("load",window.scrollY > 2100));
+        });
+        window.onload = function()
+        {
+            header.classList.toggle("load");
+            Array.from(card).forEach(card => card.classList.toggle("load"));
+            // Array.from(teamcard).forEach(teamcard => teamcard.classList.toggle("load"));
+            // cardsection.classList.toggle("load");
+            
+            //질문할 거 전체를 배열에 담아 forEach로 각각 함수를 실행해서 클래스를 추가할 때랑
+            //부모 하나 만들고 그놈 하나한테 클래스를 추가하는 것 중 어떤게 더 최적화에 좋은지
+        }
+    </script>
+    <script>
+        const button = document.querySelectorAll('header');
+        button.forEach(btn => {
+            btn.addEventListener('click', function(e)
+            {
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+
+                let ripples = document.createElement("h6");
+                ripples.style.left = x + 'px';
+                ripples.style.top = y + 'px';
+                this.appendChild(ripples);
+
+                setTimeout(()=>
+                {
+                    ripples.remove()
+                },1000);
+            })
+        })
     </script>
 </body>
 </html>
