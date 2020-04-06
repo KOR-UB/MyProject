@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pj.css">
+    <link rel="shortcut icon" href="..img/SVG/favicon.svg">
+    <title>EDIYA COFFEE CLONE PROJECT</title>
+    <meta itemprop="url" content="https://colorshtml.s3.ap-northeast-2.amazonaws.com/project.html">
+    <meta itemprop="type" content="website">
+    <meta itemprop="title" content="이디야커피 클론 프로젝트">
+    <meta itemprop="description" content="패스트 캠퍼스 팀 프로젝트(강주현 윤유비 김동욱) 이디야커피 클론 홈페이지입니다.">
+    <meta itemprop="image" content="https://www.ediya.com/images/common/meta_img.jpg">
+</head>
+<body>
+    <header>
+        <h1 class="logo">
+            <a href="https://www.ediya.com/" target="_blank">
+                <span style="--i:1;">E</span>
+                <span style="--i:2;">D</span>
+                <span style="--i:3;">I</span> 
+                <span style="--i:4;">Y</span>
+                <span style="--i:5;">A</span>
+                <span></span>
+                <span style="--i:6;">&hearts;</span>
+                <span></span>
+                <span style="--i:7;">C</span>
+                <span style="--i:8;">O</span>
+                <span style="--i:9;">F</span>
+                <span style="--i:10;">F</span>
+                <span style="--i:11;">E</span>
+                <span style="--i:12;">E</span>
+            </a>
+        </h1>
+        <button class="trickhover" onclick="toggle()">
+            <div class="toggle" type="button"  title="메뉴 열기" aria-label="메뉴 열기">
+                <span class="a11yhidden">메뉴 열기</span>
+            </div>
+        </button>
+        <div class="overlay">
+            <nav>
+                <h2 class="a11yhidden">메인 메뉴</h2>
+                <ul class="nav-menulist">
+                    <li><a tabindex="-1" href="#" id="fistitem" onkeydown="this.blur()" style="outline: none; pointer-events: none;"></a></li>
+                    <li><a class="item" href="#">메뉴</a></li>
+                    <li><a class="item" href="#">이디야멤버스</a></li>
+                    <li><a class="item" href="#">이디야커피랩</a></li>
+                    <li><a class="item" href="#">이디야컬쳐랩</a></li>
+                    <li><a class="item" href="#">공지사항</a></li>
+                    <li><a class="item" href="#">매장 찾기</a></li>
+                </ul>
+                <button class="toggle" id="overlay-close" onclick="toggle()" type="button"  title="메뉴 닫기" aria-label="메뉴 닫기">
+                <span class="a11yhidden">메뉴 닫기</span></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="Ice 체리 블라썸">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2 aria-label="아이스 체리 블라썸 라떼">ICED 벚꽃라떼</h2>
+                        <small>Cherry Blossom Latte</small>
+                        <hr>
+                        <p>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(393kcal)</small>
+                            <p>당류</p> <small>(35g)</small>
+                            <p>단백질</p> <small>(7g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(18.6g)</small>
+                            <p>나트륨</p> <small>(149mg)</small>
+                            <p>카페인</p> <small>(0mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="Hot 체리 블라썸">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>ICED 벚꽃라떼</h2>
+                        <small>Cherry Blossom Latte</small>
+                        <hr>
+                        <p>은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(430kcal)</small>
+                            <p>당류</p> <small>(38g)</small>
+                            <p>단백질</p> <small>(10g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(19.0g)</small>
+                            <p>나트륨</p> <small>(190mg)</small>
+                            <p>카페인</p> <small>(0mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="Ice 초코 브라우니">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>ICED 브라우니 쇼콜라</h2>
+                        <small>Brownie Chocolate</small>
+                        <hr>
+                        <p>깊고 진한 초콜릿의 맛에 부드러운 휘핑크림과 브라우니를 함께 어울러져 고급스러운 디저트 같은 초콜릿 음료</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(503kcal)</small>
+                            <p>당류</p> <small>(42g)</small>
+                            <p>단백질</p> <small>(9g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(20.8g)</small>
+                            <p>나트륨</p> <small>(262mg)</small>
+                            <p>카페인</p> <small>(12mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="Hot 초코 브라우니">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>ICED 브라우니 쇼콜라</h2>
+                        <small>Brownie Chocolate</small>
+                        <hr>
+                        <p>은깊고 진한 초콜릿의 맛에 부드러운 휘핑크림과 브라우니를 함께 어울러져 고급스러운 디저트 같은 초콜릿 음료</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(503kcal)</small>
+                            <p>당류</p> <small>(42g)</small>
+                            <p>단백질</p> <small>(9g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(20.9g)</small>
+                            <p>나트륨</p> <small>(299mg)</small>
+                            <p>카페인</p> <small>(12mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="제주청귤 오리지널">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>제주청귤 오리지널</h2>
+                        <small>Jeju Green Tangerine Tea</small>
+                        <hr>
+                        <p>청정 제주지역에서 자라난 귀한 청귤의 풍부한 과육을 맛볼 수 있는 새콤달콤한 홈메이드 스타일 과일차</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(218kcal)</small>
+                            <p>당류</p> <small>(51g)</small>
+                            <p>단백질</p> <small>(0g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(0.1g)</small>
+                            <p>나트륨</p> <small>(4mg)</small>
+                            <p>카페인</p> <small>(0mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="제주청귤 블라썸">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>제주청귤 블라썸</h2>
+                        <small>Jeju Green Tangerine Blossom</small>
+                        <hr>
+                        <p>청귤의 새콤함이 복숭아, 포도 등의 다양한 과일향과 함께 어우러져 밸런스가 훌륭한 블렌딩티</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(202kcal)</small>
+                            <p>당류</p> <small>(46g)</small>
+                            <p>단백질</p> <small>(1g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(0.1g)</small>
+                            <p>나트륨</p> <small>(5mg)</small>
+                            <p>카페인</p> <small>(0mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="석류 오리지널">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>석류 오리지널</h2>
+                        <small>Pomegranate Tea</small>
+                        <hr>
+                        <p>석류 특유의 산뜻한 향과 깔끔한 뒷맛이 느껴지며, 과육이 한알 한알 살아있는 붉은 빛의 매력적인 과일차</p>
+                        <button class="toggle close-btn" type="button"  onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;} " onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(210kcal)</small>
+                            <p>당류</p> <small>(42g)</small>
+                            <p>단백질</p> <small>(0g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(0.1g)</small>
+                            <p>나트륨</p> <small>(5mg)</small>
+                            <p>카페인</p> <small>(0mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card" tabindex="0" onkeypress="if(event.keyCode=='13') {clickEventHandler(event); return false;} " onclick="clickEventHandler(event)">
+                <div class="imgBx">
+                    <img src="../img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="석류 애플라임">
+                </div>
+                <div class="details">
+                    <div class="topbg">
+                        <h2>석류 애플라임</h2>
+                        <small>Pomegranate Apple Lime</small>
+                        <hr>
+                        <p>산뜻한 석류에 다양한 과일과 꽃, 그리고 샴페인의 향이 더해져 보다 깊고 중후한 맛이 느껴지는 블렌딩티</p>
+                        <button class="toggle close-btn" type="button"  
+                        onkeypress="if(event.keyCode=='13') {closeBtn(event); return false;}"
+                         onclick="closeBtn(event)"></button>
+                    </div>
+                    <div class="downbg">
+                        <div class="box left">
+                            <p>칼로리</p> <small>(220kcal)</small>
+                            <p>당류</p> <small>(42g)</small>
+                            <p>단백질</p> <small>(1g)</small>
+                        </div>
+                        <div class="box right">
+                            <p>포화지방</p> <small>(0.1g)</small>
+                            <p>나트륨</p> <small>(7mg)</small>
+                            <p>카페인</p> <small>(0mg)</small>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </section>
+    </main>
+    <script>
+        const nav_menulist = document.querySelector(".nav-menulist");
+        const overlay_close = document.getElementById("overlay-close");
+        const li_first = document.getElementById("fistitem");
+        
+        overlay_close.addEventListener("keydown", li_firstFocus);
+        function li_firstFocus(e)
+        {
+
+            if(e.keyCode === 9)
+            {
+                li_first.focus()
+            }
+        }
+        window.addEventListener('keydown', esc);
+        function esc(e)
+        {
+            if (e.keyCode === 27) 
+            {
+                close();
+            }
+        }
+        function close()
+        {
+            const header = document.querySelector("header");
+            if(header.className==="active")
+            {
+                header.classList.remove("active");
+            }
+            else
+            {
+                console.log("not active");
+            }
+        }
+
+
+        function clickEventHandler(e)
+        {   
+            e.target.classList.toggle("active");
+        }
+        function closeBtn(e)
+        {
+            const ppp = e.target.offsetParent.offsetParent.offsetParent;
+            ppp.classList.toggle("active");
+        }
+        function toggle() //버거바 토글 영영
+        {
+            const header = document.querySelector("header");
+            header.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
