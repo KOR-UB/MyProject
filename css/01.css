@@ -374,19 +374,22 @@ header ul li a
 }
 #curtain span:nth-child(1)
 {
-    background: #ff1f6b;
+    /* background: #ff1f6b; */
+    background: #dfdfdf;
     transform: rotate(-90deg);
     transition-delay: 0.2s;
 }
 #curtain span:nth-child(2)
 {
-    background: #219dff;
+    /* background: #219dff; */
+    background: #d1d1d1;
     transform: rotate(-90deg);
     transition-delay: 0.1s;
 }
 #curtain span:nth-child(3)
 {
-    background: #111;
+    /* background: #111; */
+    background: #c4c4c4;
     transform: rotate(-90deg);
     transition-delay: 0;
 }

@@ -276,7 +276,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            filter: drop-shadow(0px 0px 15px black);
+            /* filter: drop-shadow(0px 0px 15px black); */
             /* transform: translateY(-500%); */
         }
         /* .cardsection.load
@@ -302,6 +302,7 @@
             align-items: center;
             cursor: pointer;
             position: relative;
+            box-shadow: -10px 10px 20px 1px black;
         }
         .cardsection .card:nth-child(1):focus,
         .cardsection .card:nth-child(3):focus,
@@ -416,6 +417,8 @@
             background: #F8F8F8;
             letter-spacing: -0.02em;
             display: flex;
+            justify-content: center;
+            align-items: center;
 
         }
         .cardsection .card .details .downbg .box
@@ -692,8 +695,7 @@
         }
         .plussec.active
         {
-            transform: translateY(0%);
-            
+            transform: translateY(0%);    
         }
         .plussec::before
         {
@@ -799,6 +801,24 @@
             -webkit-background-clip: text;
             background-image: url(https://static.vecteezy.com/packs/media/components/home/masthead-vectors/img/lavakidneys_800x400@2x-2db5e5a0c944e2b16a11a18674570f76.jpg);
             background-attachment: fixed;
+            animation: textanimate2 12s ease-in-out infinite;
+            animation-delay: calc(1s * var(--i));
+        }
+        @keyframes textanimate2
+        {
+            0%
+            {
+                filter: hue-rotate(0);
+            }
+            20%
+            {
+                color: rgb(36, 139, 170);
+                transform: translateY(-10%);
+            }
+            40%, 100%
+            {
+                filter: hue-rotate(360deg);
+            }
         }
         .testsec2
         {
@@ -841,6 +861,91 @@
         {
             width: 100%;
             height: 100%;
+            animation: foodanim 1s ease-in-out infinite;
+            opacity: 0.4;
+        }
+        @keyframes foodanim
+        {
+            0%,100%
+            {
+                transform: rotate(-40deg) translateY(-20%);
+      
+            }
+            50%
+            {
+                transform: rotate(20deg) translateY(-20%);
+                filter: drop-shadow(0px 0px 20px rgb(255, 136, 0));
+            }
+        }
+        .testsec3
+        {
+            margin-top: 20vh;
+            width: 100%;
+            height: 80vh;
+            background: wheat;
+            display: none;
+            transform: translateX(-100%);
+            transition: 1s ease-in-out;
+        }
+        .testsec3.active
+        {
+            display: block;
+            transform: translateX(0%);
+        }
+        .testsec3 .container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .testsec3 .container .imgBx
+        {
+            position: absolute;
+        }
+        .testsec3 .container .imgBx.ediya
+        {
+            z-index: 2;
+        }
+        .testsec3 .container .imgBx.starbucks
+        {
+            z-index: 1;
+        }
+        .testsec3 .container .imgBx.ediya img
+        {
+            position: relative;
+            animation: attack 2s cubic-bezier(1.000, -0.600, 0.000, 1.450) forwards;
+            transform: translateX(-100%);
+        }
+        .testsec3 .container .content.left,
+        .testsec3 .container .content.right
+        {
+            display: inline-block;
+            position: relative;
+            width: 50%;
+            height: 80vh;
+        }
+        .testsec3 .container .content.left
+        {
+        
+        }
+        .testsec3 .container .content.right{
+            
+ 
+        }   
+      
+        @keyframes attack
+        {
+            0%
+            {
+            }
+            100%
+            {
+                transform: translateX(0) scale(1.4);
+            }
+        }
+        .testsec3 .container details
+        {
+            shape-outside: circle();
         }
         /* .testsec2 .imgBx img
         {
@@ -848,6 +953,10 @@
         } */
         @media (max-width: 1500px)
         {
+            .plussec
+            {
+                transform: translateY(0%);    
+            }
             .testsec2 .imgBx
             {
                 width: 250px;
@@ -884,7 +993,6 @@
             }
             .plussec .team-container .team-card .imgBx
             {
-                width: 100%;
                 clip-path: circle(39%);
                 display: flex;
                 justify-content: center;
@@ -914,6 +1022,11 @@
             .testsec2
             {
                 display: none;
+            } 
+            .plussec .team-container .team-card .imgBx
+            {
+                width: 100%;
+                clip-path: circle(45%);
             }
             .plussec .team-container .team-card
             {
@@ -991,6 +1104,5 @@
             .plussec .team-container .team-card .imgBx img
             {
                 object-fit: contain;
-            }
-            
+            }   
         }
