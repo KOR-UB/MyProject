@@ -9,7 +9,7 @@
     <meta itemprop="url" content="https://colorshtml.s3.ap-northeast-2.amazonaws.com/project.html">
     <meta itemprop="type" content="website">
     <meta itemprop="title" content="이디야커피 클론 프로젝트">
-    <meta itemprop="description" content="패스트 캠퍼스 팀 프로젝트(강주현 윤유비 김동욱) 이디야커피 클론 홈페이지입니다.">
+    <meta itemprop="description" content="패스트 캠퍼스 팀 프로젝트(윤유비 김동욱 강주현) 이디야커피 클론 홈페이지입니다.">
     <meta itemprop="image" content="https://www.ediya.com/images/common/meta_img.jpg">
     <style>
         .card::before
@@ -85,7 +85,6 @@
                 opacity: 0;
             }
         }
-  
     </style>
 </head>
 <body>
@@ -141,13 +140,13 @@
             <nav>
                 <h2 class="a11yhidden">메인 메뉴</h2>
                 <ul class="nav-menulist">
-                    <li><a tabindex="-1" id="firstitem" href="#"onkeydown="this.blur()" style="outline: none; pointer-events: none;"></a></li>
-                    <li><a class="item" href="" >메뉴</a></li>
+                    <!-- <li><a tabindex="-1" id="firstitem" href="#"onkeydown="this.blur()" style="outline: none; pointer-events: none;"></a></li> -->
+                    <li><a class="item" href="" id="firstitem">메뉴</a></li>
                     <li><a class="item" href="">이디야멤버스</a></li>
                     <li><a class="item" href="">이디야커피랩</a></li>
                     <li><a class="item" href="">이디야컬쳐랩</a></li>
                     <li><a class="item" href="">공지사항</a></li>
-                    <li><a class="item" href="">매장 찾기</a></li>
+                    <li><a class="item" href="" id="lastitem">매장 찾기</a></li>
                 </ul>
                 <button class="toggle" id="overlay-close" onclick="toggle()" type="button"  title="메뉴 닫기" aria-label="메뉴 닫기">
                 <span class="a11yhidden">메뉴 닫기</span></button>
@@ -520,13 +519,33 @@
         const plussec = document.querySelector(".plussec");
         const teamcard = document.querySelectorAll(".team-card");
         const testsec3 = document.querySelector(".testsec3");
+        const lastitem = document.getElementById("lastitem");
+
 
         overlay_close.addEventListener("keydown", li_firstFocus);
+        li_first.addEventListener("keydown", function(event)
+        {
+            if(event.shiftKey && event.keyCode=="9")
+            {
+                overlay_close.focus();
+                event.preventDefault();
+            }
+        });
         function li_firstFocus(e)
         {
-            if(e.keyCode === 9)
+            if(e.keyCode === 9 && !e.shiftKey)
             {
-                li_first.focus()
+                li_first.focus();
+                e.preventDefault();
+            }
+            else if(e.shiftKey && e.keyCode === 9)
+            {
+                lastitem.focus();
+                e.preventDefault();
+            }
+            else
+            {
+                return false;
             }
         }
         window.addEventListener('keydown', esc);
@@ -535,6 +554,10 @@
             if (e.keyCode === 27) 
             {
                 close();
+            }
+            else
+            {
+                return false;
             }
         }
         function close()
