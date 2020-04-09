@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header
+        {
+            z-index: 101010101010101010101010;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.411);
+        }
+        main{
+            margin-top: 80px;
+        }
+        main section
+        {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        main section ul li
+        {
+            list-style: none;
+            width: 400px;
+            height: 400px;
+        }
+        main figure
+        {
+            width: 100%;
+            height: 100%;
+            background: red;
+        }
+        header.active nav
+        {
+            display: block;
+            transform: translateX(0);
+        }
+        header nav
+        {
+            position: fixed;
+            top: 0;
+            right: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            transform: translateX(100%);
+            background: rgba(0, 0, 0, 0.644);
+        }
+        header nav ul
+        {   
+            width: 100%;
+        }
+        header nav ul li
+        {
+            width: 100%;
+            list-style: none;
+        }
+        header nav ul li a
+        {
+            display: block;
+            padding: 1em;
+        }
+        header nav ul li a:focus,
+        header nav ul li a:hover
+        {
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">로고</h1>
+        <button class="open-nav" onclick="toggle()">토글</button>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+                <li><a href="#">메뉴6</a></li>
+            </ul>
+            <button class="close-nav">
+
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2></h2>
+            <ul>
+                <li>
+                    <figure>
+                        <div class="imgBx"><img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="라떼는 말이야"></div>
+                    </figure>
+                    <dl>
+                        <dt>
+                            <p>체리 블라썸</p>
+                            <p>cherry 블라썸</p>
+                        </dt>
+                        <dd>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta porro, excepturi</p>
+                        </dd>
+                        <dd >
+                            <div class="box">
+                                <div class="left"></div>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                <div class="right">
+                                    <p>칼로리</p><span>(kcal)</span>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                    <p>칼로리</p><span>(kcal)</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd class="close-btn">
+                            <button class="toggle">
+
+                            </button>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        const closeNav = document.querySelector(".close-nav");
+        
+        function toggle()
+        {
+            const header = document.querySelector("header");
+            header.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

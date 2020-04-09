@@ -409,8 +409,7 @@ header ul li a
 {
     z-index: 3;
     transition-delay: .2s;
-    transform: rotate(0deg);
-    
+    transform: rotate(0deg); 
 }
 .toggle {
     position: absolute;

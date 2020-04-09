@@ -89,6 +89,29 @@
     </style>
 </head>
 <body>
+    <div id="curtain">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <!-- <ul>
+            <li><a href="#">안녕하세요</a></li>
+            <li><a href="#">~</a></li>
+            <li><a href="#">~~</a></li>
+            <li><a href="#">~~~</a></li>
+            <li><a href="#">~~~~</a></li>
+        </ul>    -->
+        <div class="container">
+            
+        </div>
+        <div class="curtain-toggle" onclick="curtaintoggle()"></div>
+    </div>
     <!-- 헤더시작 -->
     <header>
         <h1 class="logo">
@@ -118,13 +141,13 @@
             <nav>
                 <h2 class="a11yhidden">메인 메뉴</h2>
                 <ul class="nav-menulist">
-                    <li><a tabindex="-1" href="#" id="fistitem" onkeydown="this.blur()" style="outline: none; pointer-events: none;"></a></li>
-                    <li><a class="item" href="#">메뉴</a></li>
-                    <li><a class="item" href="#">이디야멤버스</a></li>
-                    <li><a class="item" href="#">이디야커피랩</a></li>
-                    <li><a class="item" href="#">이디야컬쳐랩</a></li>
-                    <li><a class="item" href="#">공지사항</a></li>
-                    <li><a class="item" href="#">매장 찾기</a></li>
+                    <li><a tabindex="-1" id="firstitem" href="#"onkeydown="this.blur()" style="outline: none; pointer-events: none;"></a></li>
+                    <li><a class="item" href="" >메뉴</a></li>
+                    <li><a class="item" href="">이디야멤버스</a></li>
+                    <li><a class="item" href="">이디야커피랩</a></li>
+                    <li><a class="item" href="">이디야컬쳐랩</a></li>
+                    <li><a class="item" href="">공지사항</a></li>
+                    <li><a class="item" href="">매장 찾기</a></li>
                 </ul>
                 <button class="toggle" id="overlay-close" onclick="toggle()" type="button"  title="메뉴 닫기" aria-label="메뉴 닫기">
                 <span class="a11yhidden">메뉴 닫기</span></button>
@@ -489,7 +512,7 @@
     <script>
         const nav_menulist = document.querySelector(".nav-menulist");
         const overlay_close = document.getElementById("overlay-close");
-        const li_first = document.getElementById("fistitem");
+        const li_first = document.getElementById("firstitem");
         const header = document.querySelector("header");
         const card = document.querySelectorAll(".card");
         const cardsection = document.querySelector(".cardsection")
@@ -535,10 +558,15 @@
             const ppp = e.target.offsetParent.offsetParent.offsetParent;
             ppp.classList.toggle("active");
         }
-        function toggle() //버거바 토글 영영
+        function toggle() //버거바 토글 영역
         {
             const header = document.querySelector("header");
             header.classList.toggle("active");
+        }
+        function curtaintoggle()
+        {
+            const curtain = document.getElementById("curtain");
+            curtain.classList.toggle("active");
         }
         window.addEventListener("scroll", function()
         {
