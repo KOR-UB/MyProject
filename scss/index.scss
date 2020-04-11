@@ -431,6 +431,7 @@ section
 
 .section-container
 {
+    position: fixed;
     .closeList
     {
         background: none;
@@ -438,7 +439,7 @@ section
         position: fixed;
         top: 50%;
         right: 10px;
-        animation: test 3s ease-in-out infinite;
+        animation: arrowanim 3s ease-in-out infinite;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -468,8 +469,7 @@ section
         transform: rotate(45deg);
     }
 }
-
-@keyframes test
+@keyframes arrowanim
 {
     0%,100%
     {

@@ -305,40 +305,40 @@ section {
 .sectionList.active {
   transform: translateX(0%); }
 
-.section-container .closeList {
-  background: none;
-  border: none;
-  position: fixed;
-  top: 50%;
-  right: 10px;
-  animation: test 3s ease-in-out infinite;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 100;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.section-container {
+  position: fixed; }
+  .section-container .closeList {
+    background: none;
+    border: none;
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    animation: arrowanim 3s ease-in-out infinite;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .section-container .closeList::before {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: black; }
+  .section-container .closeList::after {
+    content: "";
+    position: absolute;
+    right: 11px;
+    width: 10px;
+    height: 10px;
+    border: 3px solid black;
+    border-left: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg); }
 
-.section-container .closeList::before {
-  content: "";
-  width: 30px;
-  height: 3px;
-  background: black; }
-
-.section-container .closeList::after {
-  content: "";
-  position: absolute;
-  right: 11px;
-  width: 10px;
-  height: 10px;
-  border: 3px solid black;
-  border-left: transparent;
-  border-bottom: transparent;
-  transform: rotate(45deg); }
-
-@keyframes test {
+@keyframes arrowanim {
   0%, 100% { }
   50% {
     transform: scale(1.5); } }
