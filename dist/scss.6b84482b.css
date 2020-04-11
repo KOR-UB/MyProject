@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+
+header.sticky {
+  padding: 0px 0px 0px 20px; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 20px 80px;
+  transition: .4s ease-in-out;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 1px 5px #8d8d8d; }
+  header .logo {
+    font-size: 2em; }
+    header .logo span {
+      color: black;
+      display: inline-block;
+      animation: logoAnim 1s ease-in-out infinite;
+      animation-delay: calc(0.2s * var(--i)); }
+    header .logo span::before {
+      content: attr(data-text);
+      position: absolute;
+      font-size: 12px;
+      top: -10px;
+      left: 0px;
+      color: #66562c;
+      white-space: nowrap;
+      width: 100%;
+      text-align: center; }
+  header .open-btn {
+    width: 60px;
+    height: 80px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; }
+  header .open-btn:hover {
+    background: #eeeeee; }
+  header .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 0;
+    font-size: 0px;
+    padding-right: 30px; }
+  header .toggle:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    height: 4px;
+    background: black;
+    z-index: 1;
+    box-shadow: 0 10px 0 #000;
+    transition: 0.5s; }
+  header .toggle:after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    height: 4px;
+    background: black;
+    z-index: 1;
+    transition: 0.5s; }
+  header nav {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.801);
+    transition: 0.3s ease-in-out; }
+    header nav ul {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      header nav ul li a {
+        color: white;
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        font-size: 2em;
+        padding: 1em; }
+      header nav ul li a:hover,
+      header nav ul li a:focus {
+        background: #5d5dcf; }
+
+@keyframes logoAnim {
+  0% {
+    color: black;
+    transform: translateY(0px); }
+  20% {
+    color: #095fff;
+    transform: translateY(20px); }
+  40%, 100% {
+    color: black;
+    transform: translateY(0px); } }
+
+header.active .open-btn:hover {
+  background: #303030; }
+
+header.active .toggle::before {
+  background: white;
+  box-shadow: none;
+  transform: translateY(10px) rotate(45deg); }
+
+header.active .toggle::after {
+  background: white;
+  transform: translateY(-10px) rotate(-45deg); }
+
+header.active nav {
+  transform: translateX(0); }
+
+main {
+  margin-top: 80px; }
+
+section {
+  width: 100%;
+  height: 100vh; }
+
+.sec1 {
+  background: linear-gradient(to left, #351616, #224717, #0b1d35);
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+  .sec1 figure:nth-child(odd):hover .details {
+    transform: translateX(-400px);
+    color: white; }
+    .sec1 figure:nth-child(odd):hover .details .topbg {
+      background: #3b3b3b; }
+    .sec1 figure:nth-child(odd):hover .details .downbg {
+      background: #292929; }
+  .sec1 figure:nth-child(even):hover .details {
+    transform: translateX(400px);
+    color: white; }
+    .sec1 figure:nth-child(even):hover .details .topbg {
+      background: #3b3b3b; }
+    .sec1 figure:nth-child(even):hover .details .downbg {
+      background: #292929; }
+  .sec1 figure {
+    width: 100%;
+    height: 100%;
+    max-width: 340px;
+    max-height: 360px;
+    margin: 15px;
+    background: #ebebeb;
+    position: relative; }
+    .sec1 figure .imgBx {
+      pointer-events: none;
+      width: 100%;
+      height: 360px;
+      transition: 0.4s ease-in-out;
+      position: relative; }
+      .sec1 figure .imgBx img {
+        transition: 0.4s ease-in-out;
+        transform: scale(0.9);
+        width: 100%;
+        height: 80%; }
+      .sec1 figure .imgBx figcaption {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 10%; }
+    .sec1 figure .details {
+      z-index: -1;
+      transition: 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .sec1 figure .details .topbg {
+        padding: 30px 20px 0 20px;
+        width: 100%;
+        height: 100%;
+        max-height: 80%;
+        background: rgba(255, 255, 255, 0.4);
+        pointer-events: none; }
+        .sec1 figure .details .topbg h3 {
+          font-size: 1em; }
+        .sec1 figure .details .topbg p {
+          font-size: 0.8em; }
+        .sec1 figure .details .topbg hr {
+          border-top: none;
+          border-bottom: 1px solid black;
+          margin: 10px 0; }
+        .sec1 figure .details .topbg span {
+          font-size: 0.85em; }
+      .sec1 figure .details .downbg {
+        pointer-events: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-height: 20%;
+        background: #dfdfdf;
+        font-size: 0.8em; }
+        .sec1 figure .details .downbg .box {
+          display: inline-block;
+          width: 49%;
+          height: 100%;
+          text-align: left;
+          padding: 10px 20px; }
+        .sec1 figure .details .downbg p {
+          display: inline-block;
+          width: 50%; }
+      .sec1 figure .details .downbg::before {
+        content: "";
+        position: absolute;
+        top: 12.5%;
+        left: 50%;
+        width: 1px;
+        height: 80%;
+        background: black; }
+  .sec1 figure:hover img {
+    transform: scale(1); }
+
+.sectionList {
+  width: 100vw;
+  height: 100vh;
+  transition: 1s cubic-bezier(0.065, 0.15, 0, 0.02);
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.5em;
+  transform: translateX(-100%); }
+  .sectionList .menuitem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white; }
+    .sectionList .menuitem .imgBx {
+      display: inline-block;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .sectionList .menuitem .imgBx figcaption {
+        position: absolute;
+        bottom: -10%; }
+    .sectionList .menuitem .details {
+      display: inline-block; }
+      .sectionList .menuitem .details .topbg {
+        width: 100%;
+        height: 30vh; }
+        .sectionList .menuitem .details .topbg hr {
+          border-top: none;
+          margin: 10px 0; }
+      .sectionList .menuitem .details .downbg {
+        width: 100%; }
+        .sectionList .menuitem .details .downbg p {
+          line-height: 2em;
+          display: inline-block; }
+
+.sectionList:nth-child(1) {
+  background: rgba(0, 0, 0, 0.418); }
+
+.sectionList:nth-child(2) {
+  background: rgba(255, 0, 0, 0.404); }
+
+.sectionList:nth-child(3) {
+  background: rgba(255, 217, 0, 0.411); }
+
+.sectionList:nth-child(4) {
+  background: rgba(21, 255, 0, 0.418); }
+
+.sectionList:nth-child(5) {
+  background: rgba(0, 255, 191, 0.425); }
+
+.sectionList:nth-child(6) {
+  background: rgba(0, 81, 255, 0.397); }
+
+.sectionList:nth-child(7) {
+  background: rgba(140, 0, 255, 0.411); }
+
+.sectionList:nth-child(8) {
+  background: rgba(255, 0, 179, 0.404); }
+
+.sectionList.active {
+  transform: translateX(0%); }
+
+.section-container .closeList {
+  background: none;
+  border: none;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  animation: test 3s ease-in-out infinite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.section-container .closeList::before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: black; }
+
+.section-container .closeList::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  width: 10px;
+  height: 10px;
+  border: 3px solid black;
+  border-left: transparent;
+  border-bottom: transparent;
+  transform: rotate(45deg); }
+
+@keyframes test {
+  0%, 100% { }
+  50% {
+    transform: scale(1.5); } }
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 14px; }
+  header {
+    padding: 0 10px; } }
+
+
+/*# sourceMappingURL=/scss.6b84482b.css.map */
