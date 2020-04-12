@@ -120,6 +120,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"js/index.js":[function(require,module,exports) {
 var header = document.querySelector("header");
 var menuitem = document.querySelectorAll(".menuitem");
+var navBtn = document.querySelector(".toggle");
 var sectionContainer = document.querySelector(".section-container");
 var sectionList = document.querySelectorAll(".sectionList");
 var closeList = document.querySelector(".closeList"); // const objitem =[
@@ -248,18 +249,17 @@ Array.from(menuitem).forEach(function (item) {
     }
 
     item.classList.toggle("active");
+    sectionContainer.classList.toggle("active");
   });
 });
 window.addEventListener("scroll", function () //스크롤 좌표
 {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
-
-function toggle(e) //헤더 네비 토글
+navBtn.addEventListener("click", function () //헤더 네비 토글
 {
   header.classList.toggle("active");
-}
-
+});
 window.addEventListener("keydown", function (event) //키 상호작용
 {
   switch (event.keyCode) {
@@ -335,7 +335,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59444" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64449" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

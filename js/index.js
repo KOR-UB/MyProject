@@ -1,5 +1,6 @@
 const header = document.querySelector("header");
         const menuitem = document.querySelectorAll(".menuitem");
+        const navBtn = document.querySelector(".toggle")
         const sectionContainer = document.querySelector(".section-container");
         const sectionList = document.querySelectorAll(".sectionList"); 
         const closeList = document.querySelector(".closeList");
@@ -131,15 +132,16 @@ const header = document.querySelector("header");
                 console.log("놉");
             }
             item.classList.toggle("active");
+            sectionContainer.classList.toggle("active");
         }));
         window.addEventListener("scroll", function() //스크롤 좌표
         {
             header.classList.toggle("sticky", window.scrollY > 0);
         })
-        function toggle(e) //헤더 네비 토글
+        navBtn.addEventListener("click", function() //헤더 네비 토글
         {
             header.classList.toggle("active");
-        }
+        })
         window.addEventListener("keydown", function(event) //키 상호작용
         {
             switch(event.keyCode)

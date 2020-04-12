@@ -355,7 +355,9 @@ section
         .imgBx
         {
             display: inline-block;
-            width: 25%;
+            width: 50%;
+            height: 100%;
+            background: rgba(135, 207, 235, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -363,12 +365,32 @@ section
             figcaption
             {
                 position: absolute;
-                bottom: -10%;
+                bottom: 25%;
+                font-size: 2em;
+            }
+            img
+            {
+                transform: rotate(-15deg);
+                transition: .3s ease-in-out;
+            }
+        }
+        .imgBx:hover
+        {
+            img
+            {
+                transform: rotate(15deg)
             }
         }
         .details
         {
-            display: inline-block;
+            width: 50%;
+            height: 100%;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            padding: 20px;
             .topbg
             {
                 width: 100%;
@@ -376,6 +398,7 @@ section
                 hr
                 {
                     border-top: none;
+                    width: 30%;
                     margin: 10px 0;
                 }
             }
@@ -394,7 +417,7 @@ section
 }
 .sectionList:nth-child(1)
 {
-    background: rgba(0, 0, 0, 0.418);
+    background: rgb(0, 0, 0);
 }
 .sectionList:nth-child(2)
 {
@@ -428,10 +451,60 @@ section
 {
     transform: translateX(0%);
 }
-
+.section-container.active
+{  
+    svg
+    {
+        transition: 0.5s ease-in-out;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        transform: translateX(0%) scale(0.8);
+        path
+        {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 0;
+            animation: pathdash 3s linear forwards;
+        }
+    }
+}
+@keyframes pathdash
+{
+    0%
+    {
+        stroke-dashoffset: 0;
+    }
+    40%
+    {
+        stroke-dasharray: 30;
+        stroke-dashoffset: 40;
+        fill: black;
+    }
+    80%
+    {
+        stroke-dasharray: 15;
+        stroke-dashoffset: 20;
+    }
+    100%
+    {
+        stroke-dasharray: 360;
+        stroke-dashoffset: 0;
+        fill: #31287c;
+     
+    }
+}
 .section-container
 {
     position: fixed;
+
+    svg
+    {
+        transition: 0.5s ease-in-out;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        transform: translateX(-100%);
+    }
     .closeList
     {
         background: none;

@@ -256,21 +256,37 @@ section {
     color: white; }
     .sectionList .menuitem .imgBx {
       display: inline-block;
-      width: 25%;
+      width: 50%;
+      height: 100%;
+      background: rgba(135, 207, 235, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative; }
       .sectionList .menuitem .imgBx figcaption {
         position: absolute;
-        bottom: -10%; }
+        bottom: 25%;
+        font-size: 2em; }
+      .sectionList .menuitem .imgBx img {
+        transform: rotate(-15deg);
+        transition: .3s ease-in-out; }
+    .sectionList .menuitem .imgBx:hover img {
+      transform: rotate(15deg); }
     .sectionList .menuitem .details {
-      display: inline-block; }
+      width: 50%;
+      height: 100%;
+      background: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      padding: 20px; }
       .sectionList .menuitem .details .topbg {
         width: 100%;
         height: 30vh; }
         .sectionList .menuitem .details .topbg hr {
           border-top: none;
+          width: 30%;
           margin: 10px 0; }
       .sectionList .menuitem .details .downbg {
         width: 100%; }
@@ -279,7 +295,7 @@ section {
           display: inline-block; }
 
 .sectionList:nth-child(1) {
-  background: rgba(0, 0, 0, 0.418); }
+  background: black; }
 
 .sectionList:nth-child(2) {
   background: rgba(255, 0, 0, 0.404); }
@@ -305,8 +321,40 @@ section {
 .sectionList.active {
   transform: translateX(0%); }
 
+.section-container.active svg {
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  transform: translateX(0%) scale(0.8); }
+  .section-container.active svg path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    animation: pathdash 3s linear forwards; }
+
+@keyframes pathdash {
+  0% {
+    stroke-dashoffset: 0; }
+  40% {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 40;
+    fill: black; }
+  80% {
+    stroke-dasharray: 15;
+    stroke-dashoffset: 20; }
+  100% {
+    stroke-dasharray: 360;
+    stroke-dashoffset: 0;
+    fill: #31287c; } }
+
 .section-container {
   position: fixed; }
+  .section-container svg {
+    transition: 0.5s ease-in-out;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    transform: translateX(-100%); }
   .section-container .closeList {
     background: none;
     border: none;
