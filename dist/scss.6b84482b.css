@@ -438,6 +438,28 @@ section {
     border-bottom: transparent;
     transform: rotate(45deg); }
 
+.testanimejs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  .testanimejs h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 4em; }
+  .testanimejs .square,
+  .testanimejs .cube,
+  .testanimejs .greenbox,
+  .testanimejs .testalt {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red; }
+  .testanimejs .cube {
+    background: #0084ff; }
+  .testanimejs .greenbox {
+    background: #2bff00; }
+
 @keyframes arrowanim {
   0%, 100% { }
   50% {

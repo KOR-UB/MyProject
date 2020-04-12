@@ -600,6 +600,38 @@ section
         transform: rotate(45deg);
     }
 }
+.testanimejs
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    h2
+    {
+        text-align: center;
+        width: 100%;
+        font-size: 4em;
+    }
+    .square,
+    .cube,
+    .greenbox,
+    .testalt
+    {
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    .cube
+    {
+        background: rgb(0, 132, 255);
+    }
+    .greenbox
+    {
+        background: rgb(43, 255, 0);
+    }
+}
+
 @keyframes arrowanim
 {
     0%,100%
