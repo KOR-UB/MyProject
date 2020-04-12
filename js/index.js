@@ -199,36 +199,43 @@ const header = document.querySelector("header");
                    if(event.target == menuitem[0])
                    {
                         sectionList[0].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[1])
                    {
                         sectionList[1].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[2])
                    {
                         sectionList[2].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[3])
                    {
                         sectionList[3].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[4])
                    {
                         sectionList[4].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[5])
                    {
                         sectionList[5].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[6])
                    {
                         sectionList[6].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
                    else if(event.target == menuitem[7])
                    {
                         sectionList[7].classList.toggle("active");
+                        sectionContainer.classList.toggle("active");
                    }
-                   sectionContainer.classList.toggle("active");
                 break;
                 case 16: //시프트
                 console.log("시프트 눌림");
