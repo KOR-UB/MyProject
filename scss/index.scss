@@ -5,6 +5,11 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+body
+{
+    overflow-x: hidden;
+    background: gray;
+}
 .a11yhidden
 {
     overflow: hidden;
@@ -198,9 +203,43 @@ section
     width: 100%;
     height: 100vh;
 }
+.sec1:hover
+{
+    figure::before
+    {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url(../img/pattern.png);
+        background-size: 10px;
+        filter: drop-shadow(0px 0px 1px rgba(71, 255, 255, 0.411));
+    }
+    figure::after
+    {
+        content: "New";
+        position: absolute;
+        line-height: 100%;
+        top: 10%;
+        right: 25%;
+        width: 10%;
+        height: 10%;
+        border-radius: 30px;
+        background: rgb(123, 250, 38);
+        padding: 3px 5px;
+        border: 1px solid #31287c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 .sec1
 {
-    background: linear-gradient(to left, rgb(53, 22, 22), rgb(34, 71, 23), rgb(11, 29, 53));
+    transition: 0.2s linear;
+    border-radius: 20px;
+    background: linear-gradient(to left, rgba(53, 22, 22, 0.5), rgba(0, 0, 0, 0.5), rgba(11, 29, 53, 0.5));
     max-width: 800px;
     height: auto;
     margin: 0 auto;
@@ -600,8 +639,53 @@ section
         transform: rotate(45deg);
     }
 }
+.clouds
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    // overflow: hidden; //??
+    pointer-events: none;
+    z-index: -100;
+    img
+    {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        max-width: 100%;
+        height: 40%;
+        filter: invert(48%) sepia(13%) saturate(127%) brightness(95%) contrast(20%) drop-shadow(0px 0px 5px #fff);
+        animation: cloudanim calc(12s * var(--i)) linear infinite;
+    }
+}
+.waves
+{
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@keyframes cloudanim
+{
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(300%);
+    }
+}
 .testanimejs
 {
+    max-width: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -610,7 +694,7 @@ section
     {
         text-align: center;
         width: 100%;
-        font-size: 4em;
+        font-size: 3em;
     }
     .square,
     .cube,
@@ -697,6 +781,10 @@ section
                 }
             }
         }
+    }
+    main .sec1 figure .details
+    {
+        display: none !important;
     }
     .section-container.active
     {

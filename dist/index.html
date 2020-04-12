@@ -501,6 +501,13 @@
                 <path d="M514.68 52.98V1.34H555.97V13.71H531.28V20.57H552.18V32.45H531.28V40.44H556.98V52.98H514.68Z" fill="#31287C"></path>
                 </svg>
         </section>
+        <div class="clouds">
+            <img src="/cloud1.25cd8fb5.png" style="--i:1;" alt="구름1">
+            <img src="/cloud2.2710d99b.png" style="--i:2;" alt="구름2">
+            <img src="/cloud3.5a095ade.png" style="--i:3;" alt="구름3">
+            <img src="/cloud4.d5fc8616.png" style="--i:4;" alt="구름4">
+            <img src="/cloud5.8081f483.png" style="--i:5;" alt="구름5">
+        </div>
     </main>
     <section class="testanimejs">
         <h2>anime.js 테스트</h2>
@@ -520,19 +527,12 @@
         <div class="greenbox"></div>
         <div class="greenbox"></div>
         <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
-        <div class="testalt"></div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
     <script src="/js.00a46daa.js" defer="" async=""></script>
     <script>anime({
   targets: '.square',
+  loop: true,
   translateX: {
     value: 450,
     duration: 800
@@ -552,6 +552,7 @@
 });
 anime({
   targets: '.cube',
+  loop: true,
   translateX: {
     value: -650,
     duration: 1800
@@ -571,6 +572,7 @@ anime({
 });
 anime({
   targets: '.greenbox',
+  loop: true,
   translateX: {
     value: 50,
     duration: 800
