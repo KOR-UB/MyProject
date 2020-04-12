@@ -120,10 +120,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"js/index.js":[function(require,module,exports) {
 var header = document.querySelector("header");
 var menuitem = document.querySelectorAll(".menuitem");
-var navBtn = document.querySelector(".toggle");
+var navBtn = document.querySelector(".open-btn");
 var sectionContainer = document.querySelector(".section-container");
 var sectionList = document.querySelectorAll(".sectionList");
-var closeList = document.querySelector(".closeList"); // const objitem =[
+var closeList = document.querySelector(".closeList");
+var navmenu = document.getElementById("navmenu"); // const objitem =[
 //     {
 //         id:1,
 //         name: "아이스 체리 블라썸",
@@ -265,12 +266,36 @@ window.addEventListener("keydown", function (event) //키 상호작용
   switch (event.keyCode) {
     case 9:
       //텝
-      console.log("텝 눌림");
+      if (event.target == navmenu.firstElementChild.firstChild && event.shiftKey && event.keyCode == "9") {
+        navBtn.focus();
+        event.preventDefault();
+      } else if (event.target == navBtn && event.shiftKey && event.keyCode == "9") {
+        navmenu.lastElementChild.firstChild.focus();
+        event.preventDefault();
+      } else if (event.target == navmenu.lastElementChild.firstChild && !event.shiftKey && event.keyCode == "9") {
+        navBtn.focus();
+        event.preventDefault();
+      }
+
       break;
 
     case 27:
       //esc
       console.log("esc 눌림");
+
+      if (header.className === "active") {
+        header.classList.remove("active");
+      }
+
+      if (sectionContainer.className === "section-container active") {
+        sectionContainer.classList.remove("active");
+        Array.from(sectionList).forEach(function (sectionList) {
+          return sectionList.classList.remove("active");
+        });
+      } else {
+        console.log("not active");
+      }
+
       break;
 
     case 37:
@@ -296,6 +321,26 @@ window.addEventListener("keydown", function (event) //키 상호작용
     case 13:
       //엔터
       console.log("엔터 눌림");
+
+      if (event.target == menuitem[0]) {
+        sectionList[0].classList.toggle("active");
+      } else if (event.target == menuitem[1]) {
+        sectionList[1].classList.toggle("active");
+      } else if (event.target == menuitem[2]) {
+        sectionList[2].classList.toggle("active");
+      } else if (event.target == menuitem[3]) {
+        sectionList[3].classList.toggle("active");
+      } else if (event.target == menuitem[4]) {
+        sectionList[4].classList.toggle("active");
+      } else if (event.target == menuitem[5]) {
+        sectionList[5].classList.toggle("active");
+      } else if (event.target == menuitem[6]) {
+        sectionList[6].classList.toggle("active");
+      } else if (event.target == menuitem[7]) {
+        sectionList[7].classList.toggle("active");
+      }
+
+      sectionContainer.classList.toggle("active");
       break;
 
     case 16:

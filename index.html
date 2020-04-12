@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/SVG/favicon.svg">
+    <meta name="title" content="EDIYA COFFEE" />
+    <meta name="keywords" content="EDIYA, 이디야, 커피, 벚꽃라떼, 브라우니 쇼콜라, 제주청귤, 석류" />
+    <meta name="description" content="Always Beside you. 이디야커피 공식홈페이지입니다." />
     <link rel="stylesheet" href="./scss/index.scss">
     <title>패스트캠퍼스 이디야카페 클론</title>
 </head>
@@ -21,26 +25,27 @@
                 <span style="--i:10;" data-text="F">F</span>
             </a>
         </h1>
-        <button class="open-btn">
-            <div class="toggle">
+        <button class="open-btn" aria-labelledby="nav">
+            <div class="toggle">메뉴</div>
         </button>
-            </div>
             <nav>
-                <ul>
-                    <li><a href="#">메뉴</a></li>
-                    <li><a href="#">이디야멤버스</a></li>
-                    <li><a href="#">이디야커피랩</a></li>
-                    <li><a href="#">이디야컬쳐랩</a></li>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">매장찾기</a></li>
+                <h2 class="a11yhidden" id="nav">네비 메뉴</h2>
+                <ul id="navmenu">
+                    <li><a href="https://www.ediya.com/contents/menu_intro.html">메뉴</a></li>
+                    <li><a href="https://www.ediya.com/contents/members_intro.html">이디야멤버스</a></li>
+                    <li><a href="https://www.ediya.com/contents/coffee_lab.html">이디야커피랩</a></li>
+                    <li><a href="https://www.ediya.com/contents/music_festa.html">이디야컬쳐랩</a></li>
+                    <li><a href="https://www.ediya.com/contents/notice.html?tb_name=notice">공지사항</a></li>
+                    <li><a href="https://www.ediya.com/contents/find_store.html">매장찾기</a></li>
                 </ul>
             </nav>
     </header>
     <main>
         <section class="sec1">
-            <figure class="menuitem">
+            <h2 class="a11yhidden">커피 메뉴</h2>
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="">
+                    <img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="아이스 체리 블라썸">
                     <figcaption>아이스 체리 블라썸</figcaption>
                 </div>
                 <div class="details">
@@ -64,9 +69,9 @@
                     </div>
                 </div>
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="">
+                    <img src="./img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="핫 체리 블라썸">
                     <figcaption>핫 체리 블라썸</figcaption>
                 </div>
                 <div class="details">
@@ -90,9 +95,9 @@
                     </div>
                 </div>
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="">
+                    <img src="./img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="아이스 브라우니 쇼콜라">
                     <figcaption>아이스 브라우니 쇼콜라</figcaption>
                 </div>
                 <div class="details">
@@ -116,9 +121,9 @@
                     </div>
                 </div>   
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="">
+                    <img src="./img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="핫 브라우니 쇼콜라">
                     <figcaption>핫 브라우니 쇼콜라</figcaption>
                 </div>
                 <div class="details">
@@ -142,9 +147,9 @@
                     </div>
                 </div>
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="">
+                    <img src="./img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="제주청귤 오리지널">
                     <figcaption>제주청귤 오리지널</figcaption>
                 </div>
                 <div class="details">
@@ -168,9 +173,9 @@
                     </div>
                 </div>
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="">
+                    <img src="./img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="제주청귤 블라썸">
                     <figcaption>제주청귤 블라썸</figcaption>
                 </div>
                 <div class="details">
@@ -194,9 +199,9 @@
                     </div>
                 </div>
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="">
+                    <img src="./img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="석류 오리지널">
                     <figcaption>석류 오리지널</figcaption>
                 </div>
                 <div class="details">
@@ -220,9 +225,9 @@
                     </div>
                 </div>
             </figure>
-            <figure class="menuitem">
+            <figure class="menuitem" tabindex="0">
                 <div class="imgBx">
-                    <img src="./img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="">
+                    <img src="./img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="석류 애플라임">
                     <figcaption>석류 애플라임</figcaption>
                 </div>
                 <div class="details">
@@ -252,7 +257,7 @@
             <div class="sectionList List1">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="">
+                        <img src="./img/SVG/Ice/01_Ice_Cherry_Blossom_Latte.svg" alt="아이스 체리 블라썸">
                         <figcaption>아이스 체리 블라썸</figcaption>
                     </div>
                     <div class="details">
@@ -274,13 +279,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
             <div class="sectionList List2">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="">
+                        <img src="./img/SVG/Hot/02_hot_Cherry_Blossom_Latte.svg" alt="핫 체리 블라썸">
                         <figcaption>핫 체리 블라썸</figcaption>
                     </div>
                     <div class="details">
@@ -302,13 +308,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
             <div class="sectionList List3">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="">
+                        <img src="./img/SVG/Ice/03_Ice_Brownie_Chocolate.svg" alt="아이스 브라우니 쇼콜라">
                         <figcaption>아이스 브라우니 쇼콜라</figcaption>
                     </div>
                     <div class="details">
@@ -330,13 +337,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>   
                 </figure>
             </div>
             <div class="sectionList List4">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="">
+                        <img src="./img/SVG/Hot/04_Hot_Brownie_Chocolate.svg" alt="핫 브라우니 쇼콜라">
                         <figcaption>핫 브라우니 쇼콜라</figcaption>
                     </div>
                     <div class="details">
@@ -358,13 +366,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
             <div class="sectionList List5">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="">
+                        <img src="./img/SVG/Tangerine/05_Jeju_Green_Tangerine_Tea.svg" alt="제주청귤 오리지널">
                         <figcaption>제주청귤 오리지널</figcaption>
                     </div>
                     <div class="details">
@@ -386,13 +395,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
             <div class="sectionList List6">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="">
+                        <img src="./img/SVG/Tangerine/06-Jeju_Green_Tangerine_Blossom.svg" alt="제주청귤 블라썸">
                         <figcaption>제주청귤 블라썸</figcaption>
                     </div>
                     <div class="details">
@@ -414,13 +424,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
             <div class="sectionList List7">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="">
+                        <img src="./img/SVG/Pomegranate/07_Pomegranate_Tea.svg" alt="석류 오리지널">
                         <figcaption>석류 오리지널</figcaption>
                     </div>
                     <div class="details">
@@ -442,13 +453,14 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
             <div class="sectionList List8">
                 <figure class="menuitem">
                     <div class="imgBx">
-                        <img src="./img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="">
+                        <img src="./img/SVG/Pomegranate/08_Pomegranate_Apple_Lime.svg" alt="석류 애플라임">
                         <figcaption>석류 애플라임</figcaption>
                     </div>
                     <div class="details">
@@ -470,10 +482,11 @@
                                 <p>카페인</p> <span>(0mg)</span>
                             </div>
                         </div>
+                        <button class="buybtn">BUY NOW</button>
                     </div>
                 </figure>
             </div>
-            <button class="closeList"></button>
+            <button class="closeList" tabindex="-1"></button>
             <svg width="565" height="65" viewBox="0 0 557 55" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#37da48" stroke-width="4">
                 <path d="M0 52.98V1.34H41.27V13.71H16.6V20.57H37.45V32.45H16.6V40.44H42.29V52.98H0Z" fill="#31287C"/>
                 <path d="M50.04 52.98V1.34H70.1C75.18 1.34 78.98 1.56 81.46 2.01C83.96 2.46 86.13 3.24 87.97 4.27C91.55 6.38 94.24 9.34 96.03 13.14C97.83 16.94 98.73 21.63 98.73 27.19C98.73 33.04 97.63 37.96 95.38 41.95C93.17 45.93 89.85 48.89 85.52 50.83C83.84 51.61 81.73 52.14 79.19 52.47C76.65 52.81 72.59 52.97 67.01 52.97H50.04V52.98ZM66.62 39.9H71.11C75.23 39.9 78.08 38.98 79.71 37.12C81.31 35.28 82.1 31.97 82.1 27.19C82.1 22.53 81.28 19.24 79.65 17.3C78.02 15.36 75.24 14.41 71.32 14.41H66.63V39.9H66.62Z" fill="#31287C"/>

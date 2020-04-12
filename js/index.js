@@ -1,9 +1,12 @@
 const header = document.querySelector("header");
         const menuitem = document.querySelectorAll(".menuitem");
-        const navBtn = document.querySelector(".toggle")
+        const navBtn = document.querySelector(".open-btn")
         const sectionContainer = document.querySelector(".section-container");
         const sectionList = document.querySelectorAll(".sectionList"); 
         const closeList = document.querySelector(".closeList");
+        const navmenu = document.getElementById("navmenu");
+
+
         // const objitem =[
         //     {
         //         id:1,
@@ -147,10 +150,37 @@ const header = document.querySelector("header");
             switch(event.keyCode)
             {
                 case 9: //텝
-                console.log("텝 눌림");
+                if(event.target == navmenu.firstElementChild.firstChild && event.shiftKey && event.keyCode=="9")
+                {
+                    navBtn.focus();
+                    event.preventDefault();
+                }
+                else if(event.target == navBtn && event.shiftKey && event.keyCode == "9")
+                {
+                    navmenu.lastElementChild.firstChild.focus();
+                    event.preventDefault();
+                }
+                else if(event.target == navmenu.lastElementChild.firstChild && !event.shiftKey && event.keyCode == "9")
+                {
+                    navBtn.focus();
+                    event.preventDefault();
+                }
                 break;
                 case 27: //esc
                 console.log("esc 눌림");
+                if(header.className==="active")
+                {
+                    header.classList.remove("active");
+                }
+                if(sectionContainer.className==="section-container active")
+                {
+                    sectionContainer.classList.remove("active");
+                    Array.from(sectionList).forEach(sectionList => sectionList.classList.remove("active"));
+                }
+                else
+                {
+                    console.log("not active");
+                }
                 break;
                 case 37: //좌측 화살표
                 console.log("좌측 눌림");
@@ -166,6 +196,39 @@ const header = document.querySelector("header");
                 break;
                 case 13: //엔터
                 console.log("엔터 눌림");
+                   if(event.target == menuitem[0])
+                   {
+                        sectionList[0].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[1])
+                   {
+                        sectionList[1].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[2])
+                   {
+                        sectionList[2].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[3])
+                   {
+                        sectionList[3].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[4])
+                   {
+                        sectionList[4].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[5])
+                   {
+                        sectionList[5].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[6])
+                   {
+                        sectionList[6].classList.toggle("active");
+                   }
+                   else if(event.target == menuitem[7])
+                   {
+                        sectionList[7].classList.toggle("active");
+                   }
+                   sectionContainer.classList.toggle("active");
                 break;
                 case 16: //시프트
                 console.log("시프트 눌림");
@@ -174,3 +237,4 @@ const header = document.querySelector("header");
                 console.log("놉");
             }
         });
+        
