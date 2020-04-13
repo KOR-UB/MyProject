@@ -1,4 +1,5 @@
         const header = document.querySelector("header");
+        const logo =  header.firstElementChild.firstElementChild;
         const menuitem = document.querySelectorAll(".menuitem");
         const navBtn = document.querySelector(".open-btn")
         const sectionContainer = document.querySelector(".section-container");
@@ -144,7 +145,17 @@
         navBtn.addEventListener("click", function() //헤더 네비 토글
         {
             header.classList.toggle("active");
-        })
+            if(header.className == "active")
+            {
+                navBtn.setAttribute("title","메뉴 닫기");
+                navBtn.firstElementChild.innerText = "메뉴 닫기"
+            }
+            else
+            {
+                navBtn.setAttribute("title","메뉴 열기");
+                navBtn.firstElementChild.innerText = "메뉴 열기"
+            }
+        });
         window.addEventListener("keydown", function(event) //키 상호작용
         {
             switch(event.keyCode)
@@ -163,6 +174,16 @@
                 else if(event.target == navmenu.lastElementChild.firstChild && !event.shiftKey && event.keyCode == "9")
                 {
                     navBtn.focus();
+                    event.preventDefault();
+                }
+                if(event.target == closeList)
+                {
+                    logo.focus();
+                    event.preventDefault();
+                }
+                if(sectionContainer.className == "section-container active")
+                {
+                    closeList.focus();
                     event.preventDefault();
                 }
                 break;
@@ -196,46 +217,46 @@
                 break;
                 case 13: //엔터
                 console.log("엔터 눌림");
-                   if(event.target == menuitem[0])
-                   {
-                        sectionList[0].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[1])
-                   {
-                        sectionList[1].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[2])
-                   {
-                        sectionList[2].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[3])
-                   {
-                        sectionList[3].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[4])
-                   {
-                        sectionList[4].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[5])
-                   {
-                        sectionList[5].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[6])
-                   {
-                        sectionList[6].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
-                   else if(event.target == menuitem[7])
-                   {
-                        sectionList[7].classList.toggle("active");
-                        sectionContainer.classList.toggle("active");
-                   }
+                if(event.target == menuitem[0])
+                {
+                    sectionList[0].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[1])
+                {
+                    sectionList[1].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[2])
+                {
+                    sectionList[2].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[3])
+                {
+                    sectionList[3].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[4])
+                {
+                    sectionList[4].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[5])
+                {
+                    sectionList[5].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[6])
+                {
+                    sectionList[6].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
+                else if(event.target == menuitem[7])
+                {
+                    sectionList[7].classList.toggle("active");
+                    sectionContainer.classList.toggle("active");
+                }
                 break;
                 case 16: //시프트
                 console.log("시프트 눌림");

@@ -119,6 +119,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/index.js":[function(require,module,exports) {
 var header = document.querySelector("header");
+var logo = header.firstElementChild.firstElementChild;
 var menuitem = document.querySelectorAll(".menuitem");
 var navBtn = document.querySelector(".open-btn");
 var sectionContainer = document.querySelector(".section-container");
@@ -260,6 +261,14 @@ window.addEventListener("scroll", function () //스크롤 좌표
 navBtn.addEventListener("click", function () //헤더 네비 토글
 {
   header.classList.toggle("active");
+
+  if (header.className == "active") {
+    navBtn.setAttribute("title", "메뉴 닫기");
+    navBtn.firstElementChild.innerText = "메뉴 닫기";
+  } else {
+    navBtn.setAttribute("title", "메뉴 열기");
+    navBtn.firstElementChild.innerText = "메뉴 열기";
+  }
 });
 window.addEventListener("keydown", function (event) //키 상호작용
 {
@@ -274,6 +283,16 @@ window.addEventListener("keydown", function (event) //키 상호작용
         event.preventDefault();
       } else if (event.target == navmenu.lastElementChild.firstChild && !event.shiftKey && event.keyCode == "9") {
         navBtn.focus();
+        event.preventDefault();
+      }
+
+      if (event.target == closeList) {
+        logo.focus();
+        event.preventDefault();
+      }
+
+      if (sectionContainer.className == "section-container active") {
+        closeList.focus();
         event.preventDefault();
       }
 
@@ -387,7 +406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4923" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7534" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
