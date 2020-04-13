@@ -543,6 +543,7 @@
     </main>
     <section class="testanimejs">
         <h2>anime.js 테스트</h2>
+        <div class="staggering-grid-demo">
         <div class="square"></div>
         <div class="square"></div>
         <div class="square"></div>
@@ -558,81 +559,99 @@
         <div class="greenbox"></div>
         <div class="greenbox"></div>
         <div class="greenbox"></div>
-        <div class="testalt"></div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
     <script src="./js/index.js" defer async></script>
     <script>
-    anime({
-        targets: '.square',
-        loop:true,
-        translateX: {
-            value: 450,
-            duration: 800
-        },
-        rotate: {
-            value: 360,
-            duration: 1800,
-            easing: 'easeInOutSine'
-        },
-        scale: {
-            value: 2,
-            duration: 1600,
-            delay: 800,
-            easing: 'easeInOutQuart'
-        },
-        delay: 250
-        });
-    anime({
-        targets: '.cube',
-        loop:true,
-        translateX: {
-            value: -650,
-            duration: 1800
-        },
-        rotate: {
-            value: 360,
-            duration: 600,
-            easing: 'easeInOutSine'
-        },
-        scale: {
-            value: 2,
-            duration: 1600,
-            delay: 800,
-            easing: 'easeInOutQuart'
-        },
-        delay: 250
-        });
-    anime({
-        targets: '.greenbox',
-        loop:true,
-        translateX: {
-            value: 50,
-            duration: 800
-        },
-        rotate: {
-            value: 360,
-            duration: 1800,
-            easing: 'easeInOutSine'
-        },
-        scale: {
-            value: 2,
-            duration: 100,
-            delay: 1700,
-            easing: 'easeInOutQuart'
-        },
-        delay: 250
-        });
-        anime({
-            targets: '.testalt',
-            duration:750,
+        var tl  = anime.timeline({
+            easing:'easeOutExpo',
+            duration: 1000,
             loop: true,
-            direction: 'alternate',
-        rotate: {
-            value: 360,
-            duration: 1800,
-            easing: 'easeInOutSine'
-        }});
+        });
+        
+        tl
+        .add({
+            targets: '.square',
+            translateX: 250,
+        })
+        .add({
+            targets: '.cube',
+            translateX: 250,
+        })
+        .add({
+            targets: '.greenbox',
+            translateX: 250,
+        });
+    // anime({
+    //     targets: '.square',
+    //     loop:true,
+    //     translateX: {
+    //         value: 450,
+    //         duration: 800
+    //     },
+    //     rotate: {
+    //         value: 360,
+    //         duration: 1800,
+    //         easing: 'easeInOutSine'
+    //     },
+    //     scale: {
+    //         value: 2,
+    //         duration: 1600,
+    //         delay: 800,
+    //         easing: 'easeInOutQuart'
+    //     },
+    //     delay: 250
+    //     });
+    // anime({
+    //     targets: '.cube',
+    //     loop:true,
+    //     translateX: {
+    //         value: -650,
+    //         duration: 1800
+    //     },
+    //     rotate: {
+    //         value: 360,
+    //         duration: 600,
+    //         easing: 'easeInOutSine'
+    //     },
+    //     scale: {
+    //         value: 2,
+    //         duration: 1600,
+    //         delay: 800,
+    //         easing: 'easeInOutQuart'
+    //     },
+    //     delay: 250
+    //     });
+    // anime({
+    //     targets: '.greenbox',
+    //     loop:true,
+    //     translateX: {
+    //         value: 50,
+    //         duration: 800
+    //     },
+    //     rotate: {
+    //         value: 360,
+    //         duration: 1800,
+    //         easing: 'easeInOutSine'
+    //     },
+    //     scale: {
+    //         value: 2,
+    //         duration: 100,
+    //         delay: 1700,
+    //         easing: 'easeInOutQuart'
+    //     },
+    //     delay: 250
+    //     });
+    //     anime({
+    //         targets: '.testalt',
+    //         duration:750,
+    //         loop: true,
+    //         direction: 'alternate',
+    //     rotate: {
+    //         value: 360,
+    //         duration: 1800,
+    //         easing: 'easeInOutSine'
+    //     }});
     </script>
 </body>
 </html>
