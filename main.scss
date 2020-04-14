@@ -129,8 +129,16 @@ header
                 padding: 0 27px;
                 padding-bottom: 42px;
             } //메뉴 아이템 끝
+            .item:hover +.nav-container
+            {
+                display: block;
+                transform: none;
+            }
             .nav-container
             {
+                display: none;
+                transform: translateY(-200%);
+                transition: 0.3s ease-in-out;
                 position: fixed;
                 top: 123px;
                 left: 0;
@@ -961,9 +969,111 @@ aside
 }
 footer
 {
+    position: relative;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     background: #2C2A29;
+    .imgBx
+    {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: #282828;
+        display: flex;
+        .Max1200-center
+        {
+            &::after
+            {
+                transform: rotate(-90deg);
+                content: "STARBUCKS";
+                position: absolute;
+                top: -180px;
+                right: -40px;
+                color: rgb(95, 95, 95);
+                font-size: 1.3em;
+                font-weight: 900;
+            }
+        }
+    }
+    .footer-service
+    {
+        position: absolute;
+        bottom: 25%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li
+        {
+            position: relative;
+            list-style: none;
+            margin: 0 10px;
+            .ff1
+            {
+                color: rgb(36, 190, 36);
+            }
+            a
+            {
+                color: white;
+                font-size: 0.8em;
+            }
+        }
+        li::before
+        {
+            content: "";
+            position: absolute;
+            top: 20%;
+            right: -10px;
+            width: 2px;
+            height: 70%;
+            background: rgb(182, 182, 182);
+            
+        }
+    }
+    .Max1200-center
+    {
+        padding-top: 40px;
+        align-items: flex-start;
+        .footer-ul
+        {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .footer-item
+            {
+                width: 220px;
+                list-style: none;
+                font-size: 1em;
+                ul
+                {
+                    margin: 8px 0;
+                    width: 100%;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-flow: column;;
+                    li
+                    {
+                        list-style: none;
+                        width: 100%;
+                        line-height: 24px;
+                        font-size: 0.75em;
+                        letter-spacing: -0.05em;
+                    }
+                }
+                a
+                {
+                    color: white;
+                }
+            }
+        }
+    }
+
 }
 .Max1200
 {
