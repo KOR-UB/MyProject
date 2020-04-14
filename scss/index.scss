@@ -703,8 +703,8 @@ section
         left: 0;
         max-width: 100%;
         height: 40%;
-        filter: invert(48%) sepia(13%) saturate(127%) brightness(95%) contrast(20%) drop-shadow(0px 0px 5px #fff);
-        animation: cloudanim calc(12s * var(--i)) linear infinite;
+        // filter: invert(48%) sepia(13%) saturate(127%) brightness(95%) contrast(20%) drop-shadow(0px 0px 5px #fff);
+        animation: cloudanim calc(15s * var(--i)) linear infinite;
     }
 }
 .waves
@@ -725,7 +725,8 @@ section
     }
     100%
     {
-        transform: translateX(300%);
+        // transform: translateX(300%);
+        transform: translateX(300%) scale(20);
     }
 }
 .testanimejs
