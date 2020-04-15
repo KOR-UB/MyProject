@@ -1,0 +1,704 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+.hidden {
+    overflow: hidden;
+    position: absolute !important;
+    top: -10000em;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    z-index: -100;
+  }
+.Max1170
+{
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+header
+{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .logo
+{
+    width: 50%;
+}
+header .search
+{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+header .search p
+{
+    white-space: nowrap;
+    padding: 4px 15px;
+    border-right: 1px solid #e8e8e8;
+    color: #53585c;
+} 
+header .search input
+{
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+header .search span
+{
+    position: absolute;
+    right: 5%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+.navigation
+{
+    width: 100%;
+    height: 41px;
+    border-top: 1px solid #e8e8e8;
+    box-shadow: 0px 3px 5px 0px rgb(221, 221, 221);
+    margin-bottom: 30px;
+}
+.navigation ul
+{
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation ul li
+{
+    text-align: center;
+    flex: 1 1 20%;
+    height: 100%;
+}
+.navigation ul li a
+{
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    display: block;
+    line-height: 40px;
+    border-right: 1px solid #e8e8e8;
+    font-weight: 700 bold;
+}
+main
+{
+    max-width: 1170px;
+    padding: 0 15px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section
+{
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.row1
+{
+    height: 388.56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row1 .imgBx
+{
+    width: 100%;
+    max-width: 487.5px;
+    height: 100%;
+    max-height: 348.56px;
+    align-self: flex-start;
+    position: relative;
+}
+.row1 .imgBx::before
+{
+    content: "INSURANCE";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    letter-spacing: 0.12em;
+    color: white;
+    background: rgb(9, 117, 108);
+    margin: 10px;
+}
+.row1 .imgBx img
+{
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+.row1 .contentBx,
+.row4 .caption,
+.row5 .caption
+{
+    align-self: flex-start;
+    width: 280px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.row4 .caption,
+.row5 .caption
+{
+    height: 60%;
+}
+.row1 .contentBx h2,
+.row4 .caption h2,
+.row5 .caption h2
+{
+    color: #0b132b;
+    width: 217px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.row1 .contentBx h2:hover a,
+.row2 .content .details .group h2 a:hover,
+.row3 .card .caption a:hover,
+.row3 .downBx h2 a:hover,
+.row4 .caption h2 a:hover,
+.row5 .caption h2 a:hover,
+.row4 .detailsBx h2 a:hover,
+.row5 .detailsBx h2 a:hover,
+.row6 figcaption a:hover
+{
+    color: rgb(5, 104, 104);
+}
+.row1 .contentBx h2 a
+{
+    font-size: 2.2em;
+    transition: 0.3s;
+}
+.row4 .caption h2 a,
+.row5 .caption h2 a
+{
+    font-size: 1.3em;
+    transition: 0.3s;
+}
+.row1 .contentBx .details,
+.row3 .details,
+.row4 .details,
+.row5 .details
+{
+    width: 100%;
+    text-align: center;
+}
+.row1 .contentBx .details span,
+.row3 .details span,
+.row4 .details span,
+.row5 .details span
+{
+    font-size: 0.8em; 
+    color: #a0a0a0;
+}
+.row1 .contentBx .details .name,
+.row3 .details .name,
+.row4 .details .name,
+.row5 .details .name
+{
+    color: green;
+    margin: 0 3px;
+}
+.row1 .contentBx .details .august,
+.row3 .details .august,
+.row4 .details .august,
+.row5 .details .august
+{
+    margin: 0 7px;
+}
+.row1 .contentBx .details a,
+.row3 .details a,
+.row4 .details a,
+.row5 .details a
+{
+    font-size: 0.8em;
+    color: #a0a0a0;
+}
+.row1 .email
+{
+    align-self: flex-start;
+    border: 6px solid #DCD7E0;
+    width: 100%;
+    height: 100%;
+    max-width: 345px;
+    max-height: 343px;
+    padding: 3em;
+    text-align: center;
+}
+.row1 .email h2
+{
+    font-size: 1.7em;
+    margin-bottom: 16px;
+}
+.row1 .email p
+{
+    margin-bottom: 12px;
+    color: #818181;
+    line-height: 20px;
+}
+.row1 .email input
+{
+    width: 263px;
+    height: 40px;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+}
+.row1 .email button
+{
+    background-color: #136f63;
+    border: none;
+    width: 263px;
+    height: 40px;
+    transition: 0.3s;
+    color: white;
+    margin-bottom: 15px;
+}
+.row1 .email button:hover
+{
+    background-color: #135e54; 
+}
+.row1 .email span
+{
+    font-size: 0.75em;
+    color: #a0a0a0;
+}
+.row2
+{
+    height: 422.39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row2 .post
+{
+    width: 50%;
+    height: 100%;
+}
+.row2 .left
+{
+    padding-right: 20px;
+}
+.row2 .right
+{
+    padding-left: 20px;
+}
+.row2 .post h2,
+.row3 .card h2,
+.row4 .title,
+.row5 .title,
+.row6 .title
+{
+    text-align: center;
+    font-size: 1.5em;
+    color: #0b132b;;
+}
+.row2 .post hr,
+.row3 .card hr,
+.row4 hr,
+.row5 hr,
+.row6 hr
+{
+    border-top: none;
+    border-bottom: 2px solid #136f63;
+    margin: 6px 0 35px 0;
+}
+.row2 .post .content
+{
+    width: 100%;
+}
+.row2 .post .content .details,
+.row3 .card .downBx
+{
+    width: 100%;
+    margin: 20px 0;
+}
+.row4 .content .detailsBx .Bx,
+.row5 .content .detailsBx .Bx
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.row2 .post .content .details img,
+.row3 .card .downBx img,
+.row4 .content .detailsBx .Bx img,
+.row5 .content .detailsBx .Bx img
+{
+    display: inline-block;
+}
+.row2 .post .content .details .group,
+.row3 .card .downBx .group,
+.row4 .content .detailsBx .Bx .group,
+.row5 .content .detailsBx .Bx .group
+{
+    display: inline-block;
+    width: 77%;
+    vertical-align: top;
+    height: 100%;
+    padding-left: 10px;
+}
+.row3 .card .downBx .group
+{
+    width: 64%;
+}
+.row2 .post .content .details .group h2 a,
+.row3 .card .downBx h2 a,
+.row4 .content .detailsBx .Bx .group h2 a,
+.row5 .content .detailsBx .Bx .group h2 a
+{
+    display: block;
+    text-align: left;
+    width: 100%;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+.row4 .content .detailsBx .Bx .group h2 a,
+.row5 .content .detailsBx .Bx .group h2 a
+{
+    font-size: 1.29em;
+}
+.august
+{
+    color: #a0a0a0;
+    font-size: 0.8rem; 
+}
+.row3
+{
+    height: 725.47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row3 .card
+{
+    width: 100%;
+    height: 100%;
+}
+.row3 .card .title,
+.row4 .title,
+.row5 .title
+{
+    text-align: left;
+}
+.row3 .card.left
+{
+    padding-right: 15px;
+}
+.row3 .card.center
+{
+    padding: 0 15px;
+    position: relative;
+}
+.row3 .card.center::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #eeeeee;
+}
+.row3 .card.center::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #eeeeee;
+}
+.row3 .card.right
+{
+    padding-left: 15px;
+}
+.row3 .card .topBx
+{
+    width: 100%;
+    height: 100%;
+    max-height: 378.67px;
+    border-bottom: 1px solid #eeeeee;
+}
+.row3 .card .imgBx
+{
+    width: 100%;
+}
+.row3 .card .imgBx img
+{
+    width: 100%;
+}
+.row3 .card .caption a
+{
+    display: block;
+    font-size: 0.9em;
+    line-height: 1.25em;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.row4,
+.row5
+{
+    height: 300px;
+}
+.row4 .content,
+.row5 .content
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.row4 .content .imgBx,
+.row5 .content .imgBx
+{
+    width: 100%;
+    height: 100%;
+    max-width: 277.5px;
+    max-height: 198.406px;
+}
+.row4 .content .imgBx img,
+.row5 .content .imgBx img
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+.row4 .content .detailsBx,
+.row5 .content .detailsBx
+{
+    width: 585px;
+}
+.row6
+{
+    height: 750px;
+}
+.row6 .container
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: wrap;
+}
+.row6 .container figure
+{
+    width: 360px;
+}
+.row6 .container figure.center
+{
+    margin: 0 30px;
+}
+.row6 .container figure .imgBx
+{
+    position: relative;
+}
+.row6 .container figure .imgBx.bank::after,
+.row6 .container figure .imgBx.insurance::after
+{
+    content: "BANKING";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    letter-spacing: 0.12em;
+    color: white;
+    background: rgb(9, 117, 108);
+    margin: 10px;
+}
+.row6 .container figure .imgBx.insurance::after
+{
+    content: "INSURANCE";
+}
+.row6 .container figure figcaption
+{
+    margin: 10px 0;
+    width: 100%;
+}
+.row6 .container figure figcaption a
+{
+    font-size: 1.35em;
+    line-height: 1.2em;
+}
+.row6 .container figure .august
+{
+    display: block;
+    margin-bottom: 40px;
+}
+.row6 .btnBx
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row6 .btnBx button
+{
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #212121;
+    background: none;
+    border: 1px solid #e8e8e8;
+    border-radius: 2px;
+    margin: 0 5px;
+}
+.row6 .btnBx button.first
+{
+    background: #136f63;
+    color: white;
+}
+.row6 .btnBx span
+{
+    margin: 0px 10px;
+}
+footer
+{
+    padding-top: 60px;
+    background: #f5f5f5;
+    color: #666;
+    width: 100%;
+    height: 414px;
+    position: relative;
+}
+footer .item
+{
+    flex: 1 1 33%;
+    height: 100%;
+    margin: 1px;
+}
+footer .about img
+{
+    margin-bottom: 20px;
+}
+footer .about p
+{
+    color: #666;
+}
+footer .categories h2,
+footer .news h2
+{
+    color: #136f63;
+    font-size: 1.5em;
+}
+footer .categories ul
+{
+    margin-top: 15px;
+    padding-top: 10px;
+    margin-bottom: 35px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+footer .categories ul li
+{
+    width: 105px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+footer .categories ul li a
+{
+    color: #212121;
+}
+footer .categories p
+{
+    color: #666;
+    margin-bottom: 10px;
+}
+footer .categories .snsBx i
+{
+    color: #136f63;
+    font-size: 1.3em;
+}
+footer .news h2
+{
+    margin-bottom: 20px;
+}
+footer .news a
+{
+    display: block;
+    margin: 0px 3px 15px 3px;
+    line-height: 1.5em;
+    color: #666;
+}
+footer .addressBx
+{
+    margin-top: 70px;
+    border-top: 1px solid #a0a0a0;
+    padding: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+footer .addressBx address p
+{
+    color: #999999;
+}
+footer .addressBx address a
+{
+    color: #666666;
+}
+footer .addressBx ul
+{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .addressBx ul li a
+{
+    color: #666666;
+}
+footer .addressBx ul li span
+{
+    margin: 0px 6px;
+    color: #666666;
+}
+.icon-search
+{
+    position: absolute;
+    right: 15px;
+}
+.icon-clock
+{
+    color: #a0a0a0;
+}
