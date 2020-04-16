@@ -794,3 +794,62 @@ footer {
   width: 100%;
   overflow: hidden; }
 
+.imgBx .Max1200-center img
+{
+  position: relative;
+  top: -45px; 
+}
+
+button
+{
+  cursor: pointer;
+}
+footer .btnBx
+{
+  width: 100%;
+  position: absolute;
+  bottom: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer button
+{
+  margin: 0 5px;
+  width: 120px;
+  height: 36px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+}
+footer button:hover
+{
+  text-decoration: underline;
+}
+footer address
+{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-style: normal;
+    color: #666;
+    font-size: 0.8em;
+}
+footer address ul
+{
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+footer address ul span
+{
+  color: black;
+}
