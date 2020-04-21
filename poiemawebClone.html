@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poiemaweb Clone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #d16098;
+            background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
+        }
+        .wraper
+        {
+            width: 100%;
+            margin: 0 auto;
+            min-height: 100vh;
+            max-width: 1070px;
+            background: white;
+        }
+        header
+        {
+            width: 100%;
+            height: 210px;
+            font-size: 1.55vw;
+            font-family: Lobster;
+            color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        header h1
+        {
+            max-width: 1070px;
+        }
+        .sec1
+        {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .title
+        {
+            padding: 20px;
+            color: white;
+            width: 270px;
+            height: 120px;
+            background: #2E303E;
+        }
+        .content
+        {
+            padding: 20px;
+            height: 120px;
+            width: 870px;
+            background: white;
+        }
+        .content ol
+        {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .content ol li a
+        {
+            counter-increment: number;
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px 5px;
+            border-radius: 3px;
+            position: relative;
+        }
+        .content ol li a::before
+        {
+            content: counter(number);
+            color: skyblue;
+            position: relative;
+            font-size: 1.3em;
+            margin-right: 10px;
+        }
+        .content ol li:hover a
+        {
+            border: 1px solid rgb(212, 212, 212);
+            background: rgb(247, 243, 243);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PoiemaWeb: Fastcampus Frontend School</h1>
+    </header>
+    <div class="wraper">
+        <div class="sec1">
+            <div class="title">
+                <p>들어가며</p>
+            </div>
+            <div class="content">
+                <ol>
+                    <li><a href="#">기본 개념과 동작 원리 이해의 중요성</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
