@@ -23,6 +23,7 @@ body
 }
 header
 {
+    z-index: 10;
     font-family: Lobster;
     position: fixed;
     top: 0;
@@ -35,7 +36,30 @@ header
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    cursor: pointer;
+}
+header h1
+{
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: rgb(255, 241, 45);
+    text-shadow: -3px 1px rgb(170, 104, 42);
+    letter-spacing: 0.3em;
+}
+p
+{
+    background-size: contain;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    transition: 0.5s cubic-bezier(1.000, -0.600, 0.000, 1.650);
+    width: 100%;
+    background: sandybrown;
+    color: rgb(39, 36, 36);
+}
+p:hover
+{
+    padding-left: 10%;
 }
 header h1 span
 {
@@ -75,15 +99,6 @@ header h1 span.right
     {
         transform: none;
     }
-}
-header h1
-{
-    width: 100%;
-    text-align: center;
-    font-size: 2em;
-    color: rgb(255, 241, 45);
-    text-shadow: -3px 1px rgb(170, 104, 42);
-    letter-spacing: 0.3em;
 }
 main
 {
@@ -136,4 +151,24 @@ section{
 .cursor2.hover
 {
     background: #fff;
+}
+header h1
+{
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: rgb(255, 241, 45);
+    text-shadow: -3px 1px rgb(170, 104, 42);
+    letter-spacing: 0.3em;
+}
+main
+{
+    position: relative;
+    mix-blend-mode: screen;
+    margin-top: 70px;
+}
+section{
+    width: 100%;
+    color: white;
+    height: 100vh;
 }
