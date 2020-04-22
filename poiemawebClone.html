@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>poiemaweb Clone</title>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <style>
         *
         {
@@ -18,20 +19,20 @@
             min-height: 100vh;
             background-color: #d16098;
             background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
+            background-attachment: fixed;
         }
         .wraper
         {
             width: 100%;
             margin: 0 auto;
             min-height: 100vh;
-            max-width: 1070px;
-            background: white;
+            max-width: 1140px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         header
         {
             width: 100%;
-            height: 210px;
-            font-size: 1.55vw;
+            height: 240px;
             font-family: Lobster;
             color: beige;
             display: flex;
@@ -43,11 +44,27 @@
             text-decoration: none;
             color: black;
         }
+        .title i
+        {
+            padding: 10px;
+            float: left;
+            color: rgb(33, 157, 206);
+            font-size: 1.3em;
+        }
+        .sec2 .title i,
+        .sec2 .title .titleBx .titlenum,
+        .sec2 .content ol li a::before
+        {
+            color: rgb(255, 115, 0);
+        }
         header h1
         {
-            max-width: 1070px;
+            font-size: 3.5vw;
+            font-style: normal;
+            font-weight: 300;
+            max-width: 1140px;
         }
-        .sec1
+        .sec
         {
             width: 100%;
             display: flex;
@@ -56,47 +73,84 @@
         }
         .title
         {
-            padding: 20px;
+            padding: 10px;
             color: white;
             width: 270px;
-            height: 120px;
+            min-height: 120px;
             background: #2E303E;
+            border-bottom: 1px solid #44475b;
+        }
+        .sec2 .title
+        {
+            min-height: 2057px;
+        }
+        em
+        {
+            font-style: normal;
+        }
+        .title .titleBx
+        {
+            display: inline-block;
+        }
+        .title .titleBx h2
+        {
+            padding-top: 5px;
+            font-size: 1.1em;
+        }
+        .title .titleBx .titlenum
+        {
+            color: rgb(33, 157, 206);
+            font-size: 0.9em;
+        }
+        .title .titleBx p
+        {
+            color: #AEB1B5;
+            font-size: 0.9em;
         }
         .content
         {
-            padding: 20px;
-            height: 120px;
-            width: 870px;
+            padding: 15px;
+            min-height: 120px;
+            width: calc(1140px - 270px);
             background: white;
+            font-weight: bold;
+            border-bottom: 1px solid #ebeff5;
         }
         .content ol
         {
             list-style: none;
             padding-left: 20px;
         }
-        .content ol li a
+        .content ol li
         {
             counter-increment: number;
+        }
+        .content ol li a
+        {
             display: block;
             width: 100%;
             text-align: left;
-            padding: 10px 5px;
+            padding: 10.6px 6px;
             border-radius: 3px;
             position: relative;
+            letter-spacing: -0.1em;
+            transition: 0.2s;
         }
         .content ol li a::before
         {
             content: counter(number);
-            color: skyblue;
+            color: rgb(33, 157, 206);
             position: relative;
-            font-size: 1.3em;
-            margin-right: 10px;
+            font-size: 1em;
+            margin-right: 13px;
+            font-weight: normal;
         }
         .content ol li:hover a
         {
             border: 1px solid rgb(212, 212, 212);
-            background: rgb(247, 243, 243);
+            background: linear-gradient(to bottom, rgb(255, 255, 255) 20%, rgba(236, 233, 233, 0.371));
         }
+ 
     </style>
 </head>
 <body>
@@ -104,13 +158,78 @@
         <h1>PoiemaWeb: Fastcampus Frontend School</h1>
     </header>
     <div class="wraper">
-        <div class="sec1">
+        <div class="sec">
             <div class="title">
-                <p>들어가며</p>
+                <i class="devicon-mongodb-plain"></i>
+                <div class="titleBx">
+                    <h2>들어가며</h2>
+                    <p><em class="titlenum">1 </em>lessons</p> 
+                </div>
             </div>
             <div class="content">
                 <ol>
                     <li><a href="#">기본 개념과 동작 원리 이해의 중요성</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="sec sec2">
+            <div class="title">
+                <i class="devicon-javascript-plain"></i>
+                <div class="titleBx">
+                    <h2>JavaScript</h2>
+                    <p><em class="titlenum">1 </em>lessons</p> 
+                </div>
+            </div>
+            <div class="content">
+                <ol>
+                    <li><a href="#">프로그래밍</a></li>
+                    <li><a href="#">자바스크립트란?</a></li>
+                    <li><a href="#">자바스크립트 개발 환경과 실행방법</a></li>
+                    <li><a href="#">변수</a></li>
+                    <li><a href="#">표현식과 문</a></li>
+                    <li><a href="#">데이터 타입</a></li>
+                    <li><a href="#">연산자</a></li>
+                    <li><a href="#">제어문</a></li>
+                    <li><a href="#">타입 변환과 단축 평가</a></li>
+                    <li><a href="#">객체 리터럴</a></li>
+                    <li><a href="#">원시 값과 객체의 비교</a></li>
+                    <li><a href="#">함수</a></li>
+                    <li><a href="#">스코프</a></li>
+                    <li><a href="#">전역 변수의 문제점</a></li>
+                    <li><a href="#">let, const와 블록 레벨 스코프</a></li>
+                    <li><a href="#">프로퍼티 어트리뷰트</a></li>
+                    <li><a href="#">생성자 함수에 의한 객체 생성</a></li>
+                    <li><a href="#">함수와 일급 객체</a></li>
+                    <li><a href="#">프로토타입</a></li>
+                    <li><a href="#">strict mode</a></li>
+                    <li><a href="#">빌트인 객체</a></li>
+                    <li><a href="#">this</a></li>
+                    <li><a href="#">실행 컨텍스트</a></li>
+                    <li><a href="#">클로저</a></li>
+                    <li><a href="#">클래스</a></li>
+                    <li><a href="#">ES6 함수의 추가 기능</a></li>
+                    <li><a href="#">배열</a></li>
+                    <li><a href="#">Number</a></li>
+                    <li><a href="#">Math</a></li>
+                    <li><a href="#">Date</a></li>
+                    <li><a href="#">RegExp</a></li>
+                    <li><a href="#">String</a></li>
+                    <li><a href="#">7번째 데이터 타입 Symbol</a></li>
+                    <li><a href="#">이터러블</a></li>
+                    <li><a href="#">스프레드 문법</a></li>
+                    <li><a href="#">디스트럭처링 할당</a></li>
+                    <li><a href="#">Set과 Map</a></li>
+                    <li><a href="#">브라우저의 렌더링 과정</a></li>
+                    <li><a href="#">DOM</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">타이머</a></li>
+                    <li><a href="#">비동기 프로그래밍</a></li>
+                    <li><a href="#">Ajax</a></li>
+                    <li><a href="#">REST API</a></li>
+                    <li><a href="#">Promise</a></li>
+                    <li><a href="#">제너레이터와 async/awit</a></li>
+                    <li><a href="#">모듈</a></li>
+                    <li><a href="#">Babel과 Webpack을 이용한 ES6 개발 환경 구축</a></li>       
                 </ol>
             </div>
         </div>
