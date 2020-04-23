@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poiemaweb Clone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #d16098;
+            background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
+            background-attachment: fixed;
+        }
+        .wraper
+        {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            min-height: 200vh;
+            max-width: 1140px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: #fff;
+        }
+        header
+        {
+            width: 100%;
+            height: 240px;
+            font-family: Lobster;
+            color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        header h1
+        {
+            font-size: 3.5vw;
+            font-style: normal;
+            font-weight: 300;
+            max-width: 1140px;
+        }
+        em
+        {
+            font-style: normal;
+        }
+        .sticky
+        {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            font-size: 0.8em;
+            background:#f4f1ce;
+            background-image: linear-gradient(#fffde9, #f4f1ce);
+            box-shadow: inset 0 1px 0 white, inset 0 -3px 5px rgba(0, 0, 0, 0.05);
+            color: #b5b188;
+            line-height: 33px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+        }
+        .sticky a
+        {
+            color: #b5b188;
+        }
+        .sticky button
+        {
+            background: none;
+            border: none;
+            font-size: 21px;
+            color: gray;
+            width: 40px;
+            height: 100%;
+            border-left: 1px solid rgba(0, 0, 0, 0.103);
+            cursor: pointer;
+        }
+        .sticky h2 i
+        {
+            padding-right: 10px;
+            color: #b5b188;
+        }
+        .hiddenlist-group
+        {
+            transition: 0.2s ease-in-out;
+            height: 0px;
+        }
+        .hiddenlist
+        {
+            position: relative;
+            list-style: none;
+            padding: 25px;
+            background: rgb(227, 247, 255);
+            width: 100%;
+            height: 100%;
+            border-left: 5px solid #33a9dc;
+            display: none;
+        }
+        .hiddenlist::before
+        {
+            content: "TABLE OF CONTENTS";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #33a9dc;
+            font-size: 0.6em;
+            color: white;
+            padding: 3PX 5px;
+            font-weight: bold;
+        }
+        .hiddenlist li
+        {
+            counter-increment: number;
+            margin: 10px 0;
+        }
+        .hiddenlist li a
+        {
+            color: #008AFF;
+        }
+        .hiddenlist  li a::before
+        {
+            content: counter(number);
+            color: #008AFF;
+            position: relative;
+            font-size: 1em;
+            margin-right: 13px;
+            font-weight: normal;
+        }
+        .max1140
+        {
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+        }
+        .hiddenlist-group.active 
+        {
+            height: 200px;
+        }
+        .hiddenlist-group.active .hiddenlist
+        {  
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PoiemaWeb: Fastcampus Frontend School</h1>
+    </header>
+    <div class="wraper">
+        <div class="sticky">
+            <h2><a href="#"><i class="devicon-javascript-plain"></i>JAVASCRIPT</a></h2>
+            <button class="listtoggle"><i class="fa fa-list-ol"></i></button>
+        </div>
+        <div class="max1140">
+            <div class="hiddenlist-group">
+                <ul class="hiddenlist">
+                    <li><a href="#">자바스크립트의 태생적 특징</a></li>
+                    <li><a href="#">기본 개념과 동작 원리 이해의 중요성</a></li>
+                    <li><a href="#">학습 방법</a></li>
+                    <li><a href="#">Reference</a></li>
+                </ul>
+            </div>
+            <h2>테스트</h2>
+        </div>
+    </div>
+    <script>
+        const listtoggle = document.querySelector(".listtoggle");
+        listtoggle.addEventListener("click",function()
+        {
+            const hiddenlist = document.querySelector(".hiddenlist-group");
+            hiddenlist.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

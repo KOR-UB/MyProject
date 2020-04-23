@@ -1,0 +1,143 @@
+ *
+            {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body
+            {
+                width: 100%;
+                min-height: 100vh;
+                background-color: #d16098;
+                background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
+                background-attachment: fixed;
+            }
+            .wraper
+            {
+                width: 100%;
+                margin: 0 auto;
+                min-height: 100vh;
+                max-width: 1140px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            header
+            {
+                width: 100%;
+                height: 240px;
+                font-family: Lobster;
+                color: beige;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            a
+            {
+                text-decoration: none;
+                color: black;
+            }
+            .title i
+            {
+                padding: 10px;
+                float: left;
+                color: rgb(33, 157, 206);
+                font-size: 1.3em;
+            }
+            .sec2 .title i,
+            .sec2 .title .titleBx .titlenum,
+            .sec2 .content ol li a::before
+            {
+                color: rgb(255, 115, 0);
+            }
+            header h1
+            {
+                font-size: 3.5vw;
+                font-style: normal;
+                font-weight: 300;
+                max-width: 1140px;
+            }
+            .sec
+            {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            .title
+            {
+                padding: 10px;
+                color: white;
+                width: 270px;
+                min-height: 120px;
+                background: #2E303E;
+                border-bottom: 1px solid #44475b;
+            }
+            .sec2 .title
+            {
+                min-height: 2057px;
+            }
+            em
+            {
+                font-style: normal;
+            }
+            .title .titleBx
+            {
+                display: inline-block;
+            }
+            .title .titleBx h2
+            {
+                padding-top: 5px;
+                font-size: 1.1em;
+            }
+            .title .titleBx .titlenum
+            {
+                color: rgb(33, 157, 206);
+                font-size: 0.9em;
+            }
+            .title .titleBx p
+            {
+                color: #AEB1B5;
+                font-size: 0.9em;
+            }
+            .content
+            {
+                padding: 15px;
+                min-height: 120px;
+                width: calc(1140px - 270px);
+                background: white;
+                font-weight: bold;
+                border-bottom: 1px solid #ebeff5;
+            }
+            .content ol
+            {
+                list-style: none;
+                padding-left: 20px;
+            }
+            .content ol li
+            {
+                counter-increment: number;
+            }
+            .content ol li a
+            {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 10.6px 6px;
+                border-radius: 3px;
+                position: relative;
+                letter-spacing: -0.1em;
+                transition: 0.2s;
+            }
+            .content ol li a::before
+            {
+                content: counter(number);
+                color: rgb(33, 157, 206);
+                position: relative;
+                font-size: 1em;
+                margin-right: 13px;
+                font-weight: normal;
+            }
+            .content ol li:hover a
+            {
+                border: 1px solid rgb(212, 212, 212);
+                background: linear-gradient(to bottom, rgb(255, 255, 255) 20%, rgba(236, 233, 233, 0.371));
+            }
