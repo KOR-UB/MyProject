@@ -98,7 +98,8 @@
         .hiddenlist-group
         {
             transition: 0.2s ease-in-out;
-            height: 0px;
+            transform: scale(0);
+            margin-bottom: 40px;
         }
         .hiddenlist
         {
@@ -149,7 +150,7 @@
         }
         .hiddenlist-group.active 
         {
-            height: 200px;
+            transform: scale(1);
         }
         .hiddenlist-group.active .hiddenlist
         {  
@@ -175,7 +176,6 @@
                     <li><a href="#">Reference</a></li>
                 </ul>
             </div>
-            <h2>테스트</h2>
         </div>
     </div>
     <script>

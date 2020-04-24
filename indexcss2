@@ -1,0 +1,156 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body
+{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #d16098;
+    background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
+    background-attachment: fixed;
+}
+.wraper
+{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 200vh;
+    max-width: 1140px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+header
+{
+    width: 100%;
+    height: 240px;
+    font-family: Lobster;
+    color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
+header h1
+{
+    font-size: 3.5vw;
+    font-style: normal;
+    font-weight: 600;
+    max-width: 1140px;
+    font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif
+}
+em
+{
+    font-style: normal;
+}
+.sticky
+{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 0.8em;
+    background:#f4f1ce;
+    background-image: linear-gradient(#fffde9, #f4f1ce);
+    box-shadow: inset 0 1px 0 white, inset 0 -3px 5px rgba(0, 0, 0, 0.05);
+    color: #b5b188;
+    line-height: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    z-index: 10;
+}
+.sticky a
+{
+    color: #b5b188;
+}
+.sticky button
+{
+    background: none;
+    border: none;
+    font-size: 21px;
+    color: gray;
+    width: 40px;
+    height: 100%;
+    border-left: 1px solid rgba(0, 0, 0, 0.103);
+    cursor: pointer;
+}
+.sticky h2 i
+{
+    padding-right: 10px;
+    color: #b5b188;
+}
+.hiddenlist-group
+{
+    transition: 0.4s ease-in-out;
+    transform-origin: top left;
+    transform: scale(0);
+}
+.hiddenlist
+{
+    position: relative;
+    list-style: none;
+    padding: 25px;
+    background: rgb(227, 247, 255);
+    width: 100%;
+    height: 100%;
+    border-left: 5px solid #33a9dc;
+    display: none;
+}
+.hiddenlist::before
+{
+    content: "TABLE OF CONTENTS";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #33a9dc;
+    font-size: 0.6em;
+    color: white;
+    padding: 3PX 5px;
+    font-weight: bold;
+}
+.hiddenlist li
+{
+    counter-increment: number;
+    margin: 10px 0;
+}
+.hiddenlist li a
+{
+    color: #008AFF;
+}
+.hiddenlist  li a::before
+{
+    content: counter(number);
+    color: #008AFF;
+    position: relative;
+    font-size: 1em;
+    margin-right: 13px;
+    font-weight: normal;
+}
+.max1140
+{
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+}
+.hiddenlist-group.active 
+{
+    transform: scale(1);
+}
+.hiddenlist-group.active .hiddenlist
+{  
+    display: block;
+}
+.index
+{
+    box-sizing: content-box;
+    padding: 50px 0;
+}
