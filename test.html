@@ -11,15 +11,23 @@
 <body>
     <div class="box" style="width: 100px; height: 100px; background: red;"></div>
     <script>
-        let box = document.querySelector(".box");
-        let i = 0;
-        while(true)
-        {
-            i++;
-            box.style.width = i + "px";
-            console.log(box.style.width)
-            if(i === 1000) break;
-        }
+        // let box = document.querySelector(".box");
+        // let i = 0;
+        // const setI = setInterval(function()
+        // {
+        //     i++;
+        //     box.style.width = i + "px";
+        //     if(i === 1000)
+        //     {
+        //         clearInterval(setI)
+        //     }
+        // },10)
+      let count = 20;
+      const price = 1000;
+      
+      const result = count >= 20 ? (price * count) * 0.8 : count >= 10 ? (price * count) * 0.9 : price * count;
+      console.log(result);
+
     </script>
 </body>
 </html>

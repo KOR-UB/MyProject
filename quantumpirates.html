@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bannerBx
+        {
+            width: 100%;
+            height: 80%;
+            position: relative;
+        }
+        .bannerBx img
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: 1s ease-in-out;
+        }
+        .bannerBx img.active
+        {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="bannerBx">
+        <img style="--i: 1;" src="https://static.wixstatic.com/media/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.webp" alt="">
+        <img style="--i: 2;" src="https://static.wixstatic.com/media/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.jpg/v1/fill/w_1920,h_830,al_l,q_85,usm_0.66_1.00_0.01/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.webp" alt="">
+        <img style="--i: 3;" src="https://static.wixstatic.com/media/19834d_650890c78bc842d19fcdc58723d44403~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_650890c78bc842d19fcdc58723d44403~mv2.webp" alt="">
+    <div class="bannerBx">
+
+    <script>
+        let bannerimg = document.querySelectorAll(".bannerBx img");
+        let i = 0;
+        function BannerChange() {
+            i++;
+            switch (i) {
+                case 1:
+                    bannerimg[0].classList.add("active");
+                    bannerimg[2].classList.remove("active");
+                    break;
+                case 2:
+                    bannerimg[0].classList.remove("active");
+                    bannerimg[1].classList.add("active");
+                    break;
+                case 3:
+                    bannerimg[1].classList.remove("active");
+                    bannerimg[2].classList.add("active");
+                    break;
+                default:
+                    i = 0;
+                    BannerChange();
+            }
+        }
+        setInterval(BannerChange, 3000)
+        BannerChange();
+    </script>
+</body>
+</html>
