@@ -15,6 +15,66 @@
         {
             width: 100%;
             height: 100vh;
+        }
+        header
+        {
+            padding-top: 10px;
+            z-index: 10000;
+            width: 100%;
+            height: 125px;
+            background: #fff;
+        }
+        header .max1200
+        {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo
+        {
+            width: 28%;
+        }
+        header ul
+        {
+            list-style: none;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li
+        {
+            margin: 0 15px;
+        }
+        header ul li a
+        {
+            font-size: 0.9em;
+            padding: 23px 8px;
+            color: gray;
+            text-decoration: none;
+        }
+        header ul li a.active,
+        header ul li a:hover
+        {
+            border-top: 4px solid black;
+        }
+        .max1200
+        {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .contentBx
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: 1s;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +82,7 @@
         .bannerBx
         {
             width: 100%;
-            height: 80%;
+            height: calc(100vh - 125px);
             position: relative;
         }
         .bannerBx img
@@ -32,24 +92,77 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0;
-            transition: 1s ease-in-out;
         }
-        .bannerBx img.active
+        .bannerBx .contentBx a
+        {
+            color: rgb(13, 192, 117);
+            text-decoration: none;
+            font-size: 2em;
+            z-index: 10;
+        }
+        .bannerBx .contentBx.active
         {
             opacity: 1;
+            z-index: 1000;
+        }
+        .bannerBx .contentBx.active a
+        {
+            color: rgb(255, 255, 255);
+        }
+        footer
+        {
+            width: 100%;
+            height: 150px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="bannerBx">
-        <img style="--i: 1;" src="https://static.wixstatic.com/media/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.webp" alt="">
-        <img style="--i: 2;" src="https://static.wixstatic.com/media/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.jpg/v1/fill/w_1920,h_830,al_l,q_85,usm_0.66_1.00_0.01/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.webp" alt="">
-        <img style="--i: 3;" src="https://static.wixstatic.com/media/19834d_650890c78bc842d19fcdc58723d44403~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_650890c78bc842d19fcdc58723d44403~mv2.webp" alt="">
-    <div class="bannerBx">
-
+    <header>
+        <div class="max1200">
+            <h1 class="logo"><a href="#"><img src="https://static.wixstatic.com/media/19834d_fdfd651b17ed439cb3178d5603ea369c~mv2.png/v1/fill/w_156,h_53,al_c,q_85,usm_0.66_1.00_0.01/%EA%B0%80%EB%A1%9C%ED%98%95_black_edited_edited_edited.webp" alt=""></a>
+            </h1>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="bannerBx">
+            <div class="contentBx">
+                <img style="--i: 1;" src="https://static.wixstatic.com/media/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.webp" alt="">
+                <a href="#">VIEW OUR WORK</a>
+            </div>
+            <div class="contentBx">
+                <img style="--i: 2;" src="https://static.wixstatic.com/media/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.jpg/v1/fill/w_1920,h_830,al_l,q_85,usm_0.66_1.00_0.01/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.webp" alt="">
+                <a href="#">VIEW OUR WORK</a>
+            </div>
+            <div class="contentBx">
+                <img style="--i: 3;" src="https://static.wixstatic.com/media/19834d_650890c78bc842d19fcdc58723d44403~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_650890c78bc842d19fcdc58723d44403~mv2.webp" alt="">
+                <a href="#">VIEW OUR WORK</a>
+            </div>
+        <div class="bannerBx">
+    </main>
+    <footer>
+        <address class="copylight">
+            © 2019 Quantum Pirates All rights reserved 
+        </address>
+        <ul>
+            <li><a href="#"></a></li>
+        </ul>
+    </footer>
     <script>
-        let bannerimg = document.querySelectorAll(".bannerBx img");
+        let bannerimg = document.querySelectorAll(".bannerBx .contentBx");
         let i = 0;
         function BannerChange() {
             i++;
