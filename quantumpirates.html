@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         *
         {
@@ -24,7 +25,7 @@
             height: 125px;
             background: #fff;
         }
-        header .max1200
+        .max980
         {
             width: 100%;
             height: 100%;
@@ -60,7 +61,7 @@
         {
             border-top: 4px solid black;
         }
-        .max1200
+        .max980
         {
             width: 100%;
             max-width: 980px;
@@ -76,8 +77,8 @@
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
         }
         .bannerBx
         {
@@ -93,38 +94,98 @@
             width: 100%;
             height: 100%;
         }
+        .bannerBx .contentBx div
+        {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            align-self: center;
+        }
+        .bannerBx .contentBx div span
+        {
+            font-size: 1.3em;
+            border-bottom: 4px solid rgb(13, 192, 117);
+        }
+        .bannerBx .contentBx p
+        {
+            font-size: 4em;
+            padding-bottom: 20px;
+            color: rgb(13, 192, 117);
+        }
         .bannerBx .contentBx a
         {
+            width: 100%;
             color: rgb(13, 192, 117);
             text-decoration: none;
             font-size: 2em;
             z-index: 10;
+            text-align: center;
         }
-        .bannerBx .contentBx.active
+        .bannerBx .contentBx.active,
+        .bannerBx .contentBx.active div
         {
             opacity: 1;
             z-index: 1000;
         }
+        .bannerBx .contentBx.active p,
         .bannerBx .contentBx.active a
         {
+            transition: 1.5s;
             color: rgb(255, 255, 255);
+        }
+        .bannerBx .contentBx.active div span
+        {
+            transition: 1.5s;
+            color: white;
+            border-bottom-color: white;
         }
         footer
         {
+            position: relative;
             width: 100%;
             height: 150px;
-            max-width: 1100px;
-            margin: 0 auto;
+            background: rgb(228, 227, 227);
+        }
+        footer address
+        {
+            font-style: normal;
+            font-size: 0.9em;
+        }
+        footer ul
+        {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            background: #fff;
+        }
+        footer ul li a
+        {
+            padding: 5px 10px;
+            color: black;
+            font-size: 1.5em;
+        }
+        .comment
+        {
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 2em;
+            border: none;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: rgb(37, 36, 36);
+            border-radius: 50%;
+            border-width: 2px;
+            transform: rotateY(-180deg);
+            cursor: pointer;
+            outline: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="max1200">
+        <div class="max980">
             <h1 class="logo"><a href="#"><img src="https://static.wixstatic.com/media/19834d_fdfd651b17ed439cb3178d5603ea369c~mv2.png/v1/fill/w_156,h_53,al_c,q_85,usm_0.66_1.00_0.01/%EA%B0%80%EB%A1%9C%ED%98%95_black_edited_edited_edited.webp" alt=""></a>
             </h1>
             <ul>
@@ -141,25 +202,35 @@
         <div class="bannerBx">
             <div class="contentBx">
                 <img style="--i: 1;" src="https://static.wixstatic.com/media/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_1c37e60161314e53862b5f9c696b2bfa~mv2.webp" alt="">
-                <a href="#">VIEW OUR WORK</a>
+                <a href="https://www.quantumpirates.com/works">VIEW OUR WORK</a>
             </div>
             <div class="contentBx">
                 <img style="--i: 2;" src="https://static.wixstatic.com/media/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.jpg/v1/fill/w_1920,h_830,al_l,q_85,usm_0.66_1.00_0.01/19834d_2a139bfc6cde4c0cb1aa8def2a725193~mv2_d_4032_3024_s_4_2.webp" alt="">
-                <a href="#">VIEW OUR WORK</a>
+                <div>
+                    <p>We have <span>STRATEGY</span></p>
+                    <a href="https://www.quantumpirates.com/works">VIEW OUR WORK</a>
+                </div>
             </div>
             <div class="contentBx">
                 <img style="--i: 3;" src="https://static.wixstatic.com/media/19834d_650890c78bc842d19fcdc58723d44403~mv2.jpg/v1/fill/w_1920,h_830,al_c,q_85,usm_0.66_1.00_0.01/19834d_650890c78bc842d19fcdc58723d44403~mv2.webp" alt="">
-                <a href="#">VIEW OUR WORK</a>
+                <div>
+                    <p>We show <span>RESULTS</span></p>
+                    <a href="https://www.quantumpirates.com/works">VIEW OUR WORK</a>
+                </div>
             </div>
         <div class="bannerBx">
     </main>
     <footer>
-        <address class="copylight">
-            © 2019 Quantum Pirates All rights reserved 
-        </address>
-        <ul>
-            <li><a href="#"></a></li>
-        </ul>
+        <div class="max980">
+            <address class="copylight">
+                © 2019 Quantum Pirates All rights reserved 
+            </address>
+            <ul>
+                <li><a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/?hl=ko"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <button class="comment"><i class="fa fa-commenting"></i></button>
+        </div>
     </footer>
     <script>
         let bannerimg = document.querySelectorAll(".bannerBx .contentBx");
